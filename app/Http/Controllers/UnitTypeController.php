@@ -44,9 +44,33 @@ class UnitTypeController extends Controller
 
     public function unitTypeList(Request $request)
     {
-        $query = UnitType::get();
+        $query = UnitType::query();
+        
+        $filters = [
+            'id',
+            'name',
+            'comment',
+            'short_name',
+            'code',
+        ];
+    
+        foreach ($filters as $value) {
+            if ($request->has($value) && $request->$value != null) { 
+                 $query->where($value, $request->$value);
+            }
+        }
 
-        return DataTables::of($query)->toJson();
+        if($request->from_date_filter){
+            $date = Carbon::parse($request->from_date_filter)->format('Y-m-d');
+            $query->whereDate("created_at", ">=", $date);
+        }
+        
+        if($request->to_date_filter){
+            $date = Carbon::parse($request->to_date_filter)->format('Y-m-d');
+            $query->whereDate("created_at", "<=", $date);
+        }
+
+        return DataTables::of($query->get())->toJson();
     }
     /**
      * Show the form for creating a new resource.

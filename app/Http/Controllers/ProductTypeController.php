@@ -40,9 +40,31 @@ class ProductTypeController extends Controller
 
     public function productTypeList(Request $request)
     {
-        $query = ProductType::get();
+        $query = ProductType::query();
 
-        return DataTables::of($query)->toJson();
+        $filters = [
+            'id',
+            'name',
+            'address',
+        ];
+    
+        foreach ($filters as $value) {
+            if ($request->has($value) && $request->$value != null) { 
+                 $query->where($value, $request->$value);
+            }
+        }
+
+        if($request->from_date_filter){
+            $date = Carbon::parse($request->from_date_filter)->format('Y-m-d');
+            $query->whereDate("created_at", ">=", $date);
+        }
+        
+        if($request->to_date_filter){
+            $date = Carbon::parse($request->to_date_filter)->format('Y-m-d');
+            $query->whereDate("created_at", "<=", $date);
+        }
+
+        return DataTables::of($query->get())->toJson();
     }
 
 
