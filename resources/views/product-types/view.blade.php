@@ -55,7 +55,8 @@
                         </div>
                     </div>
                     <div class="m-separator m-separator--md m-separator--dashed"></div>
-                </div>               <table class="table table-bordered table-hover table-checkable" id="datatable"></table>
+                </div>               
+                <table class="table table-bordered table-hover table-checkable" id="datatable"></table>
                 <!--end: Datatable-->
             </div>
        </div>
