@@ -31,6 +31,7 @@ use App\Http\Controllers\PublicApiController;
 use App\Http\Controllers\ExcludedIpController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ReelStatusController;
+use App\Http\Controllers\VisitPlaceController;
 use App\Http\Controllers\NewsRequestController;
 use App\Http\Controllers\ProductTypeController;
 use App\Http\Controllers\ExcludedUserAgentController;
@@ -159,6 +160,9 @@ Route::post('log-news/list', [ModalNewController::class, 'logNewsList']);
 
 Route::resource('stocks', StockController::class);
 Route::post('stocks/list', [StockController::class, 'stockList']);
+
+Route::resource('visit-places', VisitPlaceController::class);
+Route::post('visit-places/list', [VisitPlaceController::class, 'visitPlaceList']);
 
 Route::resource('product-types', ProductTypeController::class);
 Route::post('product-types/list', [ProductTypeController::class, 'productTypeList']);
