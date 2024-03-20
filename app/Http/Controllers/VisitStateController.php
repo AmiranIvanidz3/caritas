@@ -18,8 +18,6 @@ class VisitStateController extends Controller
     public $title = 'visit-states';
     public $parent_menu = 'visit';
 
-
-    
     public function __construct()
     {
         $this->middleware('auth');
