@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductTypesTable extends Migration
+class CreateClientCityTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateProductTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_types', function (Blueprint $table) {
+        Schema::create('client_city', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->string('comment')->nullable(); 
+            $table->string('comment')->nullable();
+            $table->integer('deleted')->default(0)->nullable();
             $table->timestamp('datetime_current')->useCurrent()->nullable();
             $table->timestamp('updated_at')->useCurrent()->nullable();
         });
@@ -29,6 +30,6 @@ class CreateProductTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_types');
+        Schema::dropIfExists('client_city');
     }
 }

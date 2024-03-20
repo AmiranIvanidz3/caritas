@@ -9,6 +9,7 @@ use App\Http\Controllers\ReelController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Controllers\DonorController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\TopicController;
 use App\Http\Controllers\VideoController;
@@ -17,6 +18,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ChannelController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SettingController;
@@ -28,11 +30,14 @@ use App\Http\Controllers\ProviderController;
 use App\Http\Controllers\UnitTypeController;
 use App\Http\Controllers\ParameterController;
 use App\Http\Controllers\PublicApiController;
+use App\Http\Controllers\ClientCityController;
 use App\Http\Controllers\ExcludedIpController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ReelStatusController;
 use App\Http\Controllers\NewsRequestController;
 use App\Http\Controllers\ProductTypeController;
+use App\Http\Controllers\ProcedureTypeController;
+use App\Http\Controllers\ProcedureGroupController;
 use App\Http\Controllers\ExcludedUserAgentController;
 use App\Http\Controllers\External\ExternalController;
 
@@ -168,6 +173,23 @@ Route::post('unit-types/list', [UnitTypeController::class, 'unitTypeList']);
 
 Route::resource('providers',   ProviderController::class);
 Route::post('providers/list', [ ProviderController::class, 'providerList']);
+
+
+Route::resource('products',   ProductController::class);
+Route::post('products/list', [ ProductController::class, 'productList']);
+
+Route::resource('donors',   DonorController::class);
+Route::post('donors/list', [ DonorController::class, 'donorList']);
+
+Route::resource('client_cities',   ClientCityController::class);
+Route::post('client_cities/list', [ ClientCityController::class, 'clientCityList']);
+
+Route::resource('procedure_groups',   ProcedureGroupController::class);
+Route::post('procedure_groups/list', [ ProcedureGroupController::class, 'procedureGroupList']);
+
+
+Route::resource('procedure_types',   ProcedureTypeController::class);
+Route::post('procedure_types/list', [ ProcedureTypeController::class, 'procedureTypeList']);
 
 /*
 |--------------------------------------------------------------------------

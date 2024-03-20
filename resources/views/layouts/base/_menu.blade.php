@@ -53,6 +53,44 @@
                             </a>
                         </li>
 
+                        <li class="menu-item @if(isset($menu['dashboard']['products'])) menu-item-here @endif" aria-haspopup="true">
+                            <a href="{{ adminUrl('products') }}" class="menu-link ">
+                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                <span class="menu-text">პროდუქტები </span>
+                            </a>
+                        </li>
+
+                        
+                        <li class="menu-item @if(isset($menu['dashboard']['donors'])) menu-item-here @endif" aria-haspopup="true">
+                            <a href="{{ adminUrl('donors') }}" class="menu-link ">
+                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                <span class="menu-text">დონორები </span>
+                            </a>
+                        </li>
+
+                                                
+                        <li class="menu-item @if(isset($menu['dashboard']['client_cities'])) menu-item-here @endif" aria-haspopup="true">
+                            <a href="{{ adminUrl('client_cities') }}" class="menu-link ">
+                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                <span class="menu-text">ქალაქები</span>
+                            </a>
+                        </li>
+
+                        <li class="menu-item @if(isset($menu['dashboard']['procedure_groups'])) menu-item-here @endif" aria-haspopup="true">
+                            <a href="{{ adminUrl('procedure_groups') }}" class="menu-link ">
+                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                <span class="menu-text">პროცედურების ჯგუფები</span>
+                            </a>
+                        </li>
+
+                        
+                        <li class="menu-item @if(isset($menu['dashboard']['procedure_types'])) menu-item-here @endif" aria-haspopup="true">
+                            <a href="{{ adminUrl('procedure_types') }}" class="menu-link ">
+                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                <span class="menu-text">პროცედურების ტიპები</span>
+                            </a>
+                        </li>
+
 
 
                     </ul>
