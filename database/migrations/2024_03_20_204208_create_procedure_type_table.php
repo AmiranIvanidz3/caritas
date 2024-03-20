@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductsTable extends Migration
+class CreateProcedureTypeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,17 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('procedure_type', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('address')->nullable(); 
+            $table->string('name');
+            $table->unsignedBigInteger('procedure_group_id')->nullable();
             $table->integer('deleted')->default(0)->nullable();
-            $table->timestamp('datetime_current')->useCurrent()->nullable();
-            $table->timestamp('created_at')->useCurrent()->nullable();
+            $table->timestamps();
+
+            $table->foreign('procedure_group_id')->references('id')->on('procedure_group');
         });
+
+
     }
 
     /**
@@ -30,6 +33,6 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('procedure_type');
     }
 }
