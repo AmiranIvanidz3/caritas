@@ -24,27 +24,6 @@
                                                 </span>
                         </li>
 
-                        
-                        <li class="menu-item @if(isset($menu['dashboard']['visit-places'])) menu-item-here @endif" aria-haspopup="true">
-                            <a href="{{ adminUrl('visit-places') }}" class="menu-link ">
-                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                                <span class="menu-text">ვიზიტის ადგილი</span>
-                            </a>
-                        </li>
-
-                        <li class="menu-item @if(isset($menu['dashboard']['visit-types'])) menu-item-here @endif" aria-haspopup="true">
-                            <a href="{{ adminUrl('visit-types') }}" class="menu-link ">
-                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                                <span class="menu-text">ვიზიტის ტიპი</span>
-                            </a>
-                        </li>
-
-                        <li class="menu-item @if(isset($menu['dashboard']['visit-states'])) menu-item-here @endif" aria-haspopup="true">
-                            <a href="{{ adminUrl('visit-states') }}" class="menu-link ">
-                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                                <span class="menu-text">ვიზიტის მდგომარეობა</span>
-                            </a>
-                        </li>
 
                         <li class="menu-item @if(isset($menu['dashboard']['stocks'])) menu-item-here @endif" aria-haspopup="true">
                             <a href="{{ adminUrl('stocks') }}" class="menu-link ">
@@ -120,6 +99,46 @@
                         </li>
 
 
+
+                    </ul>
+                </div>
+            </li>
+
+            <li id ="dashboard" class="menu-item @if(isset($menu['visit'])) menu-item-open menu-item-here @endif" menu-item-submenu aria-haspopup="true" data-menu-toggle="hover">
+                <a href="javascript:;" class="menu-link menu-toggle">
+                    <i class="menu-icon flaticon flaticon-home-1"></i>
+                    <span class="menu-text">ვიზიტები</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="menu-submenu "><i class="menu-arrow"></i>
+                    <ul class="menu-subnav">
+                        <li  class="menu-item  menu-item-parent" aria-haspopup="true">
+                                                <span class="menu-link">
+                                                    <span class="menu-text">ვიზიტები</span>
+                                                </span>
+                        </li>
+
+                        
+                        <li class="menu-item @if(isset($menu['visit']['visit-places'])) menu-item-here @endif" aria-haspopup="true">
+                            <a href="{{ adminUrl('visit-places') }}" class="menu-link ">
+                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                <span class="menu-text">ვიზიტის ადგილი</span>
+                            </a>
+                        </li>
+
+                        <li class="menu-item @if(isset($menu['visit']['visit-types'])) menu-item-here @endif" aria-haspopup="true">
+                            <a href="{{ adminUrl('visit-types') }}" class="menu-link ">
+                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                <span class="menu-text">ვიზიტის ტიპი</span>
+                            </a>
+                        </li>
+
+                        <li class="menu-item @if(isset($menu['visit']['visit-states'])) menu-item-here @endif" aria-haspopup="true">
+                            <a href="{{ adminUrl('visit-states') }}" class="menu-link ">
+                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                <span class="menu-text">ვიზიტის მდგომარეობა</span>
+                            </a>
+                        </li>
 
                     </ul>
                 </div>

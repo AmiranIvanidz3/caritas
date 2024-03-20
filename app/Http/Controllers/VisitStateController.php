@@ -16,10 +16,8 @@ use Yajra\DataTables\Facades\DataTables;
 class VisitStateController extends Controller
 {
     public $title = 'visit-states';
-    public $parent_menu = 'dashboard';
+    public $parent_menu = 'visit';
 
-
-    
     public function __construct()
     {
         $this->middleware('auth');
