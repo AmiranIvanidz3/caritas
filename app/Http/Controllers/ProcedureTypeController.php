@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use Exception;
 use Illuminate\Http\Request;
 use App\Models\ProcedureType;
-use App\Models\ProcedureType;
+use App\Models\ProcedureGroup;
 use App\Helpers\ExceptionHelper;
 use App\Exceptions\ErrorException;
 use Illuminate\Support\Facades\DB;
@@ -45,7 +45,7 @@ class ProcedureTypeController extends Controller
 
     public function procedureTypeList(Request $request)
     {
-        $query = ProcedureType::get();
+        $query = ProcedureType::with('procedureGroup')->get();
 
         return DataTables::of($query)->toJson();
     }
@@ -58,7 +58,7 @@ class ProcedureTypeController extends Controller
     public function create()
     {
         $menu[$this->parent_menu][$this->title] = true;
-        $product_groups  = ProductGroup::all();
+        $procedure_groups  = ProcedureGroup::all();
 
 
 
@@ -81,7 +81,7 @@ class ProcedureTypeController extends Controller
         {
             $item = new ProcedureType();
             $item->name = $request->name;
-            $item->product_group_id = $request->product_group_id;
+            $item->procedure_group_id = $request->procedure_group_id;
             $item->save();
         }
         catch(Exception $e)
@@ -89,7 +89,7 @@ class ProcedureTypeController extends Controller
             throw new Exception($e->getMessage());
         }
 
-            return Redirect::route('procedure_groups.index');
+            return Redirect::route('procedure_types.index');
     }
     /**
      * Display the specified resource.
@@ -112,7 +112,7 @@ class ProcedureTypeController extends Controller
     {
         $item = ProcedureType::find($id);
         
-        $procedure_groups  = ProcedureType::all();
+        $procedure_groups  = ProcedureGroup::all();
 
         $menu[$this->parent_menu][$this->title] = true;
 
@@ -133,10 +133,10 @@ class ProcedureTypeController extends Controller
     {
         $item = ProcedureType::find($id);
         $item->name = $request->name;
-        $item->product_group_id = $request->product_group_id;
+        $item->procedure_group_id = $request->procedure_group_id;
         $item->save();
 
-        return Redirect::route('procedure_groups.index');
+        return Redirect::route('procedure_types.index');
     }
 
     /**

@@ -13,7 +13,7 @@
             <?php 
             $title = 'Edit';
             $item_name = $item->name;
-            $item_procedure_group_id= $item->procedure_group_id;
+            $item_procedure_group_id = $item->procedure_group_id;
             $form_action = '/'.env('ADMIN_URL').'/procedure_types/'.$item->id;
             ?>
         @endif
@@ -40,11 +40,11 @@
                             </div>
                         @endif
                     </div>
-
+                    
                     <div class="form-group">
                         <label for="kt_select2_1">Procedure Group</label>
                         <select class="form-control select2" id="kt_select2_1" name="procedure_group_id" >
-                            <option value="0">Select Unit Type</option>
+                            <option value="0">Select Group</option>
                             @foreach($procedure_groups as $procedure_group)
                                 <option {{ $procedure_group->id == $item_procedure_group_id ? 'selected' : '' }} value="{{ $procedure_group->id }}" >{{$procedure_group->name}}</option>
                             @endforeach

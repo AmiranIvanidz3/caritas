@@ -55,6 +55,16 @@
                 }
             },
             {
+                title: 'Procedure Group',
+                data: 'procedure_group.name',
+                render: function(data, type, row)
+                {
+
+                    return data ? data : "";
+                    
+                }
+            },
+            {
                 title: 'Edit',
                 data: 'id',
                 sWidth:'1px',

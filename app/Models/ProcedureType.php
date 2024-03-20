@@ -10,4 +10,9 @@ class ProcedureType extends Model
     use HasFactory;
 
     protected $table = "procedure_type";
+
+
+    public function procedureGroup(){
+        return $this->belongsTo(ProcedureGroup::class, 'procedure_group_id');
+    }
 }

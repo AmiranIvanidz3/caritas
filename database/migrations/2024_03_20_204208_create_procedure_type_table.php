@@ -20,7 +20,7 @@ class CreateProcedureTypeTable extends Migration
             $table->integer('deleted')->default(0)->nullable();
             $table->timestamps();
 
-            $table->foreign('procedure_group_id')->references('id')->on('product_group');
+            $table->foreign('procedure_group_id')->references('id')->on('procedure_group');
         });
 
 
