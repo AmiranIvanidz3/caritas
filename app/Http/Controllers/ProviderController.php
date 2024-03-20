@@ -57,7 +57,7 @@ class ProviderController extends Controller
     
         foreach ($filters as $value) {
             if ($request->has($value) && $request->$value != null) { 
-                 $query->where($value, $request->$value);
+                 $query->where($value, 'like', '%' . $request->$value . '%');
             }
         }
 

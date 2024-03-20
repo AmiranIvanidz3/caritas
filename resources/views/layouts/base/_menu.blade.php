@@ -25,6 +25,27 @@
                         </li>
 
                         
+                        <li class="menu-item @if(isset($menu['dashboard']['visit-places'])) menu-item-here @endif" aria-haspopup="true">
+                            <a href="{{ adminUrl('visit-places') }}" class="menu-link ">
+                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                <span class="menu-text">ვიზიტის ადგილი</span>
+                            </a>
+                        </li>
+
+                        <li class="menu-item @if(isset($menu['dashboard']['visit-types'])) menu-item-here @endif" aria-haspopup="true">
+                            <a href="{{ adminUrl('visit-types') }}" class="menu-link ">
+                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                <span class="menu-text">ვიზიტის ტიპი</span>
+                            </a>
+                        </li>
+
+                        <li class="menu-item @if(isset($menu['dashboard']['visit-states'])) menu-item-here @endif" aria-haspopup="true">
+                            <a href="{{ adminUrl('visit-states') }}" class="menu-link ">
+                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                <span class="menu-text">ვიზიტის მდგომარეობა</span>
+                            </a>
+                        </li>
+
                         <li class="menu-item @if(isset($menu['dashboard']['stocks'])) menu-item-here @endif" aria-haspopup="true">
                             <a href="{{ adminUrl('stocks') }}" class="menu-link ">
                                 <i class="menu-bullet menu-bullet-dot"><span></span></i>
