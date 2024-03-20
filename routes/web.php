@@ -29,6 +29,7 @@ use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\ProviderController;
 use App\Http\Controllers\UnitTypeController;
 use App\Http\Controllers\ParameterController;
+use App\Http\Controllers\ProcedureController;
 use App\Http\Controllers\PublicApiController;
 use App\Http\Controllers\VisitTypeController;
 use App\Http\Controllers\ClientCityController;
@@ -202,6 +203,9 @@ Route::post('procedure_groups/list', [ ProcedureGroupController::class, 'procedu
 
 Route::resource('procedure_types',   ProcedureTypeController::class);
 Route::post('procedure_types/list', [ ProcedureTypeController::class, 'procedureTypeList']);
+
+Route::resource('procedures',   ProcedureController::class);
+Route::post('procedures/list', [ ProcedureController::class, 'procedureList']);
 
 /*
 |--------------------------------------------------------------------------

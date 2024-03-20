@@ -112,6 +112,13 @@
                             </a>
                         </li>
 
+                        <li class="menu-item @if(isset($menu['dashboard']['procedures'])) menu-item-here @endif" aria-haspopup="true">
+                            <a href="{{ adminUrl('procedures') }}" class="menu-link ">
+                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                <span class="menu-text">პროცედურები</span>
+                            </a>
+                        </li>
+
 
 
                     </ul>
