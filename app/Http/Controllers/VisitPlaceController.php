@@ -16,7 +16,7 @@ use Yajra\DataTables\Facades\DataTables;
 class VisitPlaceController extends Controller
 {
     public $title = 'visit-places';
-    public $parent_menu = 'dashboard';
+    public $parent_menu = 'visit';
 
 
     
