@@ -20,7 +20,7 @@ class ProviderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public $title = 'providers';
-    public $parent_menu = 'dashboard';
+    public $parent_menu = 'resources';
 
     public function __construct()
     {

@@ -9,162 +9,212 @@
         <!--begin::Menu Nav-->
         <ul class="menu-nav ">
 
-          
-            <li id ="dashboard" class="menu-item @if(isset($menu['dashboard'])) menu-item-open menu-item-here @endif" menu-item-submenu aria-haspopup="true" data-menu-toggle="hover">
-                <a href="javascript:;" class="menu-link menu-toggle">
-                    <i class="menu-icon flaticon flaticon-home-1"></i>
-                    <span class="menu-text">Dashboard</span>
-                    <i class="menu-arrow"></i>
-                </a>
-                <div class="menu-submenu "><i class="menu-arrow"></i>
-                    <ul class="menu-subnav">
-                        <li  class="menu-item  menu-item-parent" aria-haspopup="true">
-                                                <span class="menu-link">
-                                                    <span class="menu-text">Dashboard</span>
-                                                </span>
-                        </li>
 
-
-                        <li class="menu-item @if(isset($menu['dashboard']['stocks'])) menu-item-here @endif" aria-haspopup="true">
-                            <a href="{{ adminUrl('stocks') }}" class="menu-link ">
-                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                                <span class="menu-text">საწყობები</span>
-                            </a>
-                        </li>
-
-                        <li class="menu-item @if(isset($menu['dashboard']['product-types'])) menu-item-here @endif" aria-haspopup="true">
-                            <a href="{{ adminUrl('product-types') }}" class="menu-link ">
-                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                                <span class="menu-text">საქონლის ტიპები</span>
-                            </a>
-                        </li> 
-                        
-                        <li class="menu-item @if(isset($menu['dashboard']['unit-types'])) menu-item-here @endif" aria-haspopup="true">
-                            <a href="{{ adminUrl('unit-types') }}" class="menu-link ">
-                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                                <span class="menu-text">საქონლის ერთეულები</span>
-                            </a>
-                        </li>
-
-                        <li class="menu-item @if(isset($menu['dashboard']['providers'])) menu-item-here @endif" aria-haspopup="true">
-                            <a href="{{ adminUrl('providers') }}" class="menu-link ">
-                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                                <span class="menu-text">ორგანიზაციები</span>
-                            </a>
-                        </li>
-
-                        <li class="menu-item @if(isset($menu['dashboard']['products'])) menu-item-here @endif" aria-haspopup="true">
-                            <a href="{{ adminUrl('products') }}" class="menu-link ">
-                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                                <span class="menu-text">პროდუქტები </span>
-                            </a>
-                        </li>
-
-                        
-                        <li class="menu-item @if(isset($menu['dashboard']['donors'])) menu-item-here @endif" aria-haspopup="true">
-                            <a href="{{ adminUrl('donors') }}" class="menu-link ">
-                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                                <span class="menu-text">დონორები </span>
-                            </a>
-                        </li>
-
-                                                
-                        <li class="menu-item @if(isset($menu['dashboard']['client_cities'])) menu-item-here @endif" aria-haspopup="true">
-                            <a href="{{ adminUrl('client_cities') }}" class="menu-link ">
-                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                                <span class="menu-text">ქალაქები</span>
-                            </a>
-                        </li>
-
-                        <li class="menu-item @if(isset($menu['dashboard']['procedure_groups'])) menu-item-here @endif" aria-haspopup="true">
-                            <a href="{{ adminUrl('procedure_groups') }}" class="menu-link ">
-                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                                <span class="menu-text">პროცედურების ჯგუფები</span>
-                            </a>
-                        </li>
-
-                        
-                        <li class="menu-item @if(isset($menu['dashboard']['procedure_types'])) menu-item-here @endif" aria-haspopup="true">
-                            <a href="{{ adminUrl('procedure_types') }}" class="menu-link ">
-                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                                <span class="menu-text">პროცედურების ტიპები</span>
-                            </a>
-                        </li>
-
-                        <li class="menu-item @if(isset($menu['dashboard']['procedures'])) menu-item-here @endif" aria-haspopup="true">
-                            <a href="{{ adminUrl('procedures') }}" class="menu-link ">
-                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                                <span class="menu-text">პროცედურები</span>
-                            </a>
-                        </li>
-
-
-
-                    </ul>
-                </div>
-            </li>
-
-            <li id ="dashboard" class="menu-item @if(isset($menu['visit'])) menu-item-open menu-item-here @endif" menu-item-submenu aria-haspopup="true" data-menu-toggle="hover">
-                <a href="javascript:;" class="menu-link menu-toggle">
-                    <i class="menu-icon flaticon flaticon-home-1"></i>
-                    <span class="menu-text">ვიზიტები</span>
-                    <i class="menu-arrow"></i>
-                </a>
-                <div class="menu-submenu "><i class="menu-arrow"></i>
-                    <ul class="menu-subnav">
-                        <li  class="menu-item  menu-item-parent" aria-haspopup="true">
-                                                <span class="menu-link">
-                                                    <span class="menu-text">ვიზიტები</span>
-                                                </span>
-                        </li>
-
-                        
-                        <li class="menu-item @if(isset($menu['visit']['visit-places'])) menu-item-here @endif" aria-haspopup="true">
-                            <a href="{{ adminUrl('visit-places') }}" class="menu-link ">
-                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                                <span class="menu-text">ვიზიტის ადგილი</span>
-                            </a>
-                        </li>
-
-                        <li class="menu-item @if(isset($menu['visit']['visit-types'])) menu-item-here @endif" aria-haspopup="true">
-                            <a href="{{ adminUrl('visit-types') }}" class="menu-link ">
-                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                                <span class="menu-text">ვიზიტის ტიპი</span>
-                            </a>
-                        </li>
-
-                        <li class="menu-item @if(isset($menu['visit']['visit-states'])) menu-item-here @endif" aria-haspopup="true">
-                            <a href="{{ adminUrl('visit-states') }}" class="menu-link ">
-                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                                <span class="menu-text">ვიზიტის მდგომარეობა</span>
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-            </li>
-
-            @canany(['author:view', 'playlist:view', 'video:view', 'reel:view', 'platform:view', 'account:view', 'comment:view'])
-                <li id ="general" class="menu-item @if(isset($menu['general'])) menu-item-open menu-item-here @endif" menu-item-submenu aria-haspopup="true" data-menu-toggle="hover">
+           
+                <li id ="resources" class="menu-item @if(isset($menu['resources'])) menu-item-open menu-item-here @endif" menu-item-submenu aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
                         <i class="menu-icon fa fa-layer-group"></i>
-                        <span class="menu-text">General</span>
+                        <span class="menu-text">ცნობარები</span>
                         <i class="menu-arrow"></i>
                     </a>
                     <div class="menu-submenu "><i class="menu-arrow"></i>
                         <ul class="menu-subnav">
                             <li  class="menu-item  menu-item-parent" aria-haspopup="true">
                                                     <span class="menu-link">
-                                                        <span class="menu-text">General</span>
+                                                        <span class="menu-text">ცნობარები</span>
                                                     </span>
                             </li>
 
+                            <li class="menu-item @if(isset($menu['resources']['products'])) menu-item-here @endif" aria-haspopup="true">
+                                <a href="{{ adminUrl('products') }}" class="menu-link ">
+                                    <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                    <span class="menu-text">საქონელი</span>
+                                </a>
+                            </li>
+    
+                            
+                            <li class="menu-item @if(isset($menu['resources']['donors'])) menu-item-here @endif" aria-haspopup="true">
+                                <a href="{{ adminUrl('donors') }}" class="menu-link ">
+                                    <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                    <span class="menu-text">დონორები </span>
+                                </a>
+                            </li>
+    
+                                                    
+                            <li class="menu-item @if(isset($menu['resources']['client_cities'])) menu-item-here @endif" aria-haspopup="true">
+                                <a href="{{ adminUrl('client_cities') }}" class="menu-link ">
+                                    <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                    <span class="menu-text">ქალაქები</span>
+                                </a>
+                            </li>
+    
+                          
+    
+                            <li class="menu-item @if(isset($menu['resources']['procedures'])) menu-item-here @endif" aria-haspopup="true">
+                                <a href="{{ adminUrl('procedures') }}" class="menu-link ">
+                                    <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                    <span class="menu-text">პროცედურები</span>
+                                </a>
+                            </li>
+
+                            <li class="menu-item @if(isset($menu['resources']['providers'])) menu-item-here @endif" aria-haspopup="true">
+                                <a href="{{ adminUrl('providers') }}" class="menu-link ">
+                                    <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                    <span class="menu-text">ორგანიზაციები</span>
+                                </a>
+                            </li>
+
+                            <li class="menu-item @if(isset($menu['resources']['products'])) menu-item-here @endif" aria-haspopup="true">
+                                <a href="{{ adminUrl('stocks') }}" class="menu-link ">
+                                    <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                    <span class="menu-text">საქონელი</span>
+                                </a>
+                            </li>
+
+                            <li class="menu-item @if(isset($menu['resources']['stocks'])) menu-item-here @endif" aria-haspopup="true">
+                                <a href="{{ adminUrl('stocks') }}" class="menu-link ">
+                                    <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                    <span class="menu-text">საწყობები</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+
+                <li id ="administration" class="menu-item @if(isset($menu['administration'])) menu-item-open menu-item-here @endif" menu-item-submenu aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="javascript:;" class="menu-link menu-toggle">
+                        <i class="menu-icon fa fa-layer-group"></i>
+                        <span class="menu-text">ადმინისტრირება</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="menu-submenu "><i class="menu-arrow"></i>
+                        <ul class="menu-subnav">
+                            <li  class="menu-item  menu-item-parent" aria-haspopup="true">
+                                                    <span class="menu-link">
+                                                        <span class="menu-text">ადმინისტრირება</span>
+                                                    </span>
+                            </li>
+
+                           
+
+
+                            <li id ="administration" class="menu-item @if(isset($menu['administration']['products'])) menu-item-open menu-item-here @endif" menu-item-submenu aria-haspopup="true" data-menu-toggle="hover">
+                                <a href="javascript:;" class="menu-link menu-toggle">
+                                    <i class="menu-icon fa fa-layer-group"></i>
+                                    <span class="menu-text">საქონელი</span>
+                                    <i class="menu-arrow"></i>
+                                </a>
+                                
+                                <div class="menu-submenu "><i class="menu-arrow"></i>
+                                    <ul class="menu-subnav">
+                                        <li  class="menu-item  menu-item-parent" aria-haspopup="true">
+                                                                <span class="menu-link">
+                                                                    <span class="menu-text">საქონელი</span>
+                                                                </span>
+                                        </li>
+
+                                        <li class="menu-item @if(isset($menu['administration']['products']['product-types'])) menu-item-here submenu @endif" aria-haspopup="true">
+                                            <a href="{{ adminUrl('product-types') }}" class="menu-link ">
+                                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                                <span class="menu-text">საქონლის ტიპები</span>
+                                            </a>
+                                        </li> 
+                                        
+                                        <li class="menu-item @if(isset($menu['administration']['products']['unit-types'])) menu-item-here submenu @endif" aria-haspopup="true">
+                                            <a href="{{ adminUrl('unit-types') }}" class="menu-link ">
+                                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                                <span class="menu-text">საქონლის ერთეულები</span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+
+
+                           
+                            
+                            <li id ="administration" class="menu-item @if(isset($menu['administration']['procedures'])) menu-item-open menu-item-here @endif" menu-item-submenu aria-haspopup="true" data-menu-toggle="hover">
+                                <a href="javascript:;" class="menu-link menu-toggle">
+                                    <i class="menu-icon fa fa-layer-group"></i>
+                                    <span class="menu-text">პროცედურები</span>
+                                    <i class="menu-arrow"></i>
+                                </a>
+                                
+                                <div class="menu-submenu "><i class="menu-arrow"></i>
+                                    <ul class="menu-subnav">
+                                        <li  class="menu-item  menu-item-parent" aria-haspopup="true">
+                                                                <span class="menu-link">
+                                                                    <span class="menu-text">პროცედურები</span>
+                                                                </span>
+                                        </li>
+
+                                        <li class="menu-item @if(isset($menu['administration']['procedures']['procedure_groups'])) menu-item-here submenu @endif" aria-haspopup="true">
+                                            <a href="{{ adminUrl('procedure_groups') }}" class="menu-link ">
+                                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                                <span class="menu-text">პროცედურების ჯგუფები</span>
+                                            </a>
+                                        </li>
+                
+                                        
+                                        <li class="menu-item @if(isset($menu['administration']['procedures']['procedure_types'])) menu-item-here submenu @endif" aria-haspopup="true">
+                                            <a href="{{ adminUrl('procedure_types') }}" class="menu-link ">
+                                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                                <span class="menu-text">პროცედურების ტიპები</span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li id ="administration" class="menu-item @if(isset($menu['administration']['visits'])) menu-item-open menu-item-here @endif" menu-item-submenu aria-haspopup="true" data-menu-toggle="hover">
+                                <a href="javascript:;" class="menu-link menu-toggle">
+                                    <i class="menu-icon fa fa-layer-group"></i>
+                                    <span class="menu-text">ვიზიტები</span>
+                                    <i class="menu-arrow"></i>
+                                </a>
+                                <div class="menu-submenu "><i class="menu-arrow"></i>
+                                    <ul class="menu-subnav">
+                                        <li  class="menu-item  menu-item-parent" aria-haspopup="true">
+                                                                <span class="menu-link">
+                                                                    <span class="menu-text">ვიზიტები</span>
+                                                                </span>
+                                        </li>
+
+                                        <li class="menu-item @if(isset($menu['administration']['visits']['visit-places'])) menu-item-here submenu @endif" aria-haspopup="true">
+                                            <a href="{{ adminUrl('visit-places') }}" class="menu-link ">
+                                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                                <span class="menu-text">ვიზიტის ადგილი</span>
+                                            </a>
+                                        </li>
+                
+                                        <li class="menu-item @if(isset($menu['administration']['visits']['visit-types'])) menu-item-here submenu @endif" aria-haspopup="true">
+                                            <a href="{{ adminUrl('visit-types') }}" class="menu-link ">
+                                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                                <span class="menu-text">ვიზიტის ტიპი</span>
+                                            </a>
+                                        </li>
+                
+                                        <li class="menu-item @if(isset($menu['administration']['visits']['visit-states'])) menu-item-here submenu @endif" aria-haspopup="true">
+                                            <a href="{{ adminUrl('visit-states') }}" class="menu-link ">
+                                                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                                <span class="menu-text">ვიზიტის მდგომარეობა</span>
+                                            </a>
+                                        </li>
+                                        
+            
+                                    </ul>
+                                </div>
+                            </li>
+                            
                             
 
                         </ul>
                     </div>
                 </li>
-            @endcan
+          
 
             @can('log:view')
 

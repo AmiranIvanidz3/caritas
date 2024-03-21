@@ -21,7 +21,7 @@ class ProcedureController extends Controller
      * @return \Illuminate\Http\Response
      */
     public $title = 'procedures';
-    public $parent_menu = 'dashboard';
+    public $parent_menu = 'resources';
 
 
     

@@ -20,7 +20,8 @@ class ProcedureGroupController extends Controller
      * @return \Illuminate\Http\Response
      */
     public $title = 'procedure_groups';
-    public $parent_menu = 'dashboard';
+    public $parent_menu = 'administration';
+    public $submenu = 'procedures';
 
 
     
@@ -35,8 +36,7 @@ class ProcedureGroupController extends Controller
     {
        
 
-        $menu[$this->parent_menu][$this->title] = true;
-
+        $menu[$this->parent_menu][$this->submenu][$this->title] = true;
         return view(strtolower($this->title).'.view')
             ->with('menu', $menu) 
             ->with('page_title',ucwords(str_replace("-", " ", $this->parent_menu)));
@@ -56,8 +56,7 @@ class ProcedureGroupController extends Controller
      */
     public function create()
     {
-        $menu[$this->parent_menu][$this->title] = true;
-
+        $menu[$this->parent_menu][$this->submenu][$this->title] = true;
         return view(strtolower($this->title).'.add_edit')
         ->with('action', 'add')
         ->with('menu', $menu);
@@ -109,8 +108,7 @@ class ProcedureGroupController extends Controller
     {
         $item = ProcedureGroup::find($id);
 
-        $menu[$this->parent_menu][$this->title] = true;
-
+        $menu[$this->parent_menu][$this->submenu][$this->title] = true;
         return view(strtolower($this->title).'.add_edit')
             ->with('menu', $menu) 
             ->with('item', $item)

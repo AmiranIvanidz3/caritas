@@ -16,7 +16,8 @@ use Yajra\DataTables\Facades\DataTables;
 class VisitStateController extends Controller
 {
     public $title = 'visit-states';
-    public $parent_menu = 'visit';
+    public $parent_menu = 'administration';
+    public $submenu = 'visits';
 
     public function __construct()
     {
@@ -29,7 +30,7 @@ class VisitStateController extends Controller
     {
        
 
-        $menu[$this->parent_menu][$this->title] = true;
+        $menu[$this->parent_menu][$this->submenu][$this->title] = true;
 
         return view(strtolower($this->title).'.view')
             ->with('menu', $menu) 
@@ -76,7 +77,7 @@ class VisitStateController extends Controller
     {
         //
 
-        $menu[$this->parent_menu][$this->title] = true;
+        $menu[$this->parent_menu][$this->submenu][$this->title] = true;
 
         return view(strtolower($this->title).'.add_edit')
         ->with('action', 'add')
@@ -129,7 +130,7 @@ class VisitStateController extends Controller
            
         $item = VisitState::find($id);
         
-        $menu[$this->parent_menu][$this->title] = true;
+        $menu[$this->parent_menu][$this->submenu][$this->title] = true;
 
         return view(strtolower($this->title).'.add_edit')
             ->with('menu', $menu) 

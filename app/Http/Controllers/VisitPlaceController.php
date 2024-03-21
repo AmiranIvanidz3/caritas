@@ -16,7 +16,8 @@ use Yajra\DataTables\Facades\DataTables;
 class VisitPlaceController extends Controller
 {
     public $title = 'visit-places';
-    public $parent_menu = 'visit';
+    public $parent_menu = 'administration';
+    public $submenu = 'visits';
 
 
     
@@ -31,8 +32,7 @@ class VisitPlaceController extends Controller
     {
        
 
-        $menu[$this->parent_menu][$this->title] = true;
-
+        $menu[$this->parent_menu][$this->submenu][$this->title] = true;
         return view(strtolower($this->title).'.view')
             ->with('menu', $menu) 
             ->with('page_title',ucwords(str_replace("-", " ", $this->parent_menu)));
@@ -78,8 +78,7 @@ class VisitPlaceController extends Controller
     {
         //
 
-        $menu[$this->parent_menu][$this->title] = true;
-
+        $menu[$this->parent_menu][$this->submenu][$this->title] = true;
         return view(strtolower($this->title).'.add_edit')
         ->with('action', 'add')
         ->with('menu', $menu);
@@ -131,8 +130,7 @@ class VisitPlaceController extends Controller
            
         $item = VisitPlace::find($id);
         
-        $menu[$this->parent_menu][$this->title] = true;
-
+        $menu[$this->parent_menu][$this->submenu][$this->title] = true;
         return view(strtolower($this->title).'.add_edit')
             ->with('menu', $menu) 
             ->with('item', $item)

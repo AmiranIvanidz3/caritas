@@ -16,7 +16,8 @@ use Yajra\DataTables\Facades\DataTables;
 class ProductTypeController extends Controller
 {
     public $title = 'product-types';
-    public $parent_menu = 'dashboard';
+    public $parent_menu = 'administration';
+    public $submenu = 'products';
 
 
     
@@ -31,7 +32,7 @@ class ProductTypeController extends Controller
     {
        
 
-        $menu[$this->parent_menu][$this->title] = true;
+        $menu[$this->parent_menu][$this->submenu][$this->title] = true;
 
         return view(strtolower($this->title).'.view')
             ->with('menu', $menu) 
@@ -77,8 +78,8 @@ class ProductTypeController extends Controller
     {
         //
 
-        $menu[$this->parent_menu][$this->title] = true;
 
+        $menu[$this->parent_menu][$this->submenu][$this->title] = true;
 
         
 
@@ -134,8 +135,8 @@ class ProductTypeController extends Controller
            
         $item = ProductType::find($id);
         
-        $menu[$this->parent_menu][$this->title] = true;
 
+        $menu[$this->parent_menu][$this->submenu][$this->title] = true;
         return view(strtolower($this->title).'.add_edit')
             ->with('menu', $menu) 
             ->with('item', $item)

@@ -17,7 +17,7 @@ use Yajra\DataTables\Facades\DataTables;
 class StockController extends Controller
 {
     public $title = 'stocks';
-    public $parent_menu = 'dashboard';
+    public $parent_menu = 'resources';
 
 
     

@@ -15,7 +15,8 @@ use Yajra\DataTables\Facades\DataTables;
 class VisitTypeController extends Controller
 {
     public $title = 'visit-types';
-    public $parent_menu = 'visit';
+    public $parent_menu = 'administration';
+    public $submenu = 'visits';
 
 
     
@@ -30,8 +31,7 @@ class VisitTypeController extends Controller
     {
        
 
-        $menu[$this->parent_menu][$this->title] = true;
-
+$menu[$this->parent_menu][$this->submenu][$this->title] = true;
         return view(strtolower($this->title).'.view')
             ->with('menu', $menu) 
             ->with('page_title',ucwords(str_replace("-", " ", $this->parent_menu)));
@@ -77,8 +77,7 @@ class VisitTypeController extends Controller
     {
         //
 
-        $menu[$this->parent_menu][$this->title] = true;
-
+    $menu[$this->parent_menu][$this->submenu][$this->title] = true;
         return view(strtolower($this->title).'.add_edit')
         ->with('action', 'add')
         ->with('menu', $menu);
@@ -130,8 +129,7 @@ class VisitTypeController extends Controller
            
         $item = VisitType::find($id);
         
-        $menu[$this->parent_menu][$this->title] = true;
-
+$menu[$this->parent_menu][$this->submenu][$this->title] = true;
         return view(strtolower($this->title).'.add_edit')
             ->with('menu', $menu) 
             ->with('item', $item)

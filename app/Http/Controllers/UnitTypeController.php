@@ -22,7 +22,8 @@ class UnitTypeController extends Controller
      */
 
     public $title = 'unit-types';
-    public $parent_menu = 'dashboard';
+    public $parent_menu = 'administration';
+    public $submenu = 'products';
 
     public function __construct()
     {
@@ -35,8 +36,7 @@ class UnitTypeController extends Controller
     {
        
 
-        $menu[$this->parent_menu][$this->title] = true;
-
+        $menu[$this->parent_menu][$this->submenu][$this->title] = true;
         return view(strtolower($this->title).'.view')
             ->with('menu', $menu) 
             ->with('page_title',ucwords(str_replace("-", " ", $this->parent_menu)));
@@ -79,10 +79,10 @@ class UnitTypeController extends Controller
      */
     public function create()
     {
-        $menu[$this->parent_menu][$this->title] = true;
+        $menu[$this->parent_menu][$this->submenu][$this->title] = true;
         return view(strtolower($this->title).'.add_edit')
-        ->with('action', 'add')
-        ->with('menu', $menu);
+            ->with('action', 'add')
+            ->with('menu', $menu);
     }
 
     /**
@@ -133,8 +133,7 @@ class UnitTypeController extends Controller
            
         $item = UnitType::find($id);
         
-        $menu[$this->parent_menu][$this->title] = true;
-
+        $menu[$this->parent_menu][$this->submenu][$this->title] = true;
         return view(strtolower($this->title).'.add_edit')
             ->with('menu', $menu) 
             ->with('item', $item)

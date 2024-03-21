@@ -21,7 +21,8 @@ class ProcedureTypeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public $title = 'procedure_types';
-    public $parent_menu = 'dashboard';
+    public $parent_menu = 'administration';
+    public $submenu = 'procedures';
 
 
     
@@ -36,8 +37,7 @@ class ProcedureTypeController extends Controller
     {
        
 
-        $menu[$this->parent_menu][$this->title] = true;
-
+        $menu[$this->parent_menu][$this->submenu][$this->title] = true;
         return view(strtolower($this->title).'.view')
             ->with('menu', $menu) 
             ->with('page_title',ucwords(str_replace("-", " ", $this->parent_menu)));
@@ -57,10 +57,9 @@ class ProcedureTypeController extends Controller
      */
     public function create()
     {
-        $menu[$this->parent_menu][$this->title] = true;
+        $menu[$this->parent_menu][$this->submenu][$this->title] = true;   
+             
         $procedure_groups  = ProcedureGroup::all();
-
-
 
         return view(strtolower($this->title).'.add_edit')
         ->with('action', 'add')
@@ -114,8 +113,7 @@ class ProcedureTypeController extends Controller
         
         $procedure_groups  = ProcedureGroup::all();
 
-        $menu[$this->parent_menu][$this->title] = true;
-
+        $menu[$this->parent_menu][$this->submenu][$this->title] = true;
         return view(strtolower($this->title).'.add_edit')
             ->with('menu', $menu) 
             ->with('procedure_groups', $procedure_groups) 

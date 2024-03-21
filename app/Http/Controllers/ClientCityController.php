@@ -18,7 +18,7 @@ class ClientCityController extends Controller
      * @return \Illuminate\Http\Response
      */
     public $title = 'client_cities';
-    public $parent_menu = 'dashboard';
+    public $parent_menu = 'resources';
 
 
     

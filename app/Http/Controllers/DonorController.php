@@ -15,7 +15,7 @@ use Yajra\DataTables\Facades\DataTables;
 class DonorController extends Controller
 {
     public $title = 'donors';
-    public $parent_menu = 'dashboard';
+    public $parent_menu = 'resources';
 
 
     
