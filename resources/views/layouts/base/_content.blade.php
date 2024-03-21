@@ -10,20 +10,24 @@
                 <!--begin::Page Heading-->
                 <div class="d-flex align-items-baseline flex-wrap mr-5">
                     <!--begin::Page Title-->
-                    <h5 class="text-dark font-weight-bold my-1 mr-5 page-title">
-                      
-                    </h5>
+                    
                     <!--end::Page Title-->
 
                     <!--begin::Breadcrumb-->
-                    <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
-                        
+                    <ul id="breadcrumb-desktop" class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+                        <h5 class="text-dark font-weight-bold my-1 mr-5 page-title">
+                      
+                        </h5>
                         <li class="breadcrumb-item">
                             <i class="menu-icon"></i>
                         </li>
 
                         <li class="breadcrumb-item">
                             <a class="text-muted" href=""></a>
+                        </li>
+
+                        <li class="breadcrumb-item">
+                            <a class="submenu-text-muted text-muted" href=""></a>
                         </li>
 
                     </ul>
@@ -68,12 +72,17 @@
             const pageTitle = document.querySelector('.menu-item-here .menu-text').innerText;
             const linkName = document.querySelector('.menu-item-here .menu-item-here .menu-text').innerText;
             const link = document.querySelector('.menu-item-here .menu-item-here .menu-link').href;
+            const submenuName = document.querySelector('.menu-item .menu-item-here .submenu')
             
 
             document.querySelector(".page-title").innerHTML = pageTitle;
             document.querySelector(".breadcrumb-item .menu-icon").innerHTML = iconHTML;
             document.querySelector(".breadcrumb-item .text-muted").innerText = linkName;
             document.querySelector(".breadcrumb-item .text-muted").href = link;
+            if(submenuName){
+               
+                document.querySelector(".breadcrumb-item .submenu-text-muted").innerText = submenuName.innerText
+            }
 
            
             if(currentURL.endsWith("/create")){
@@ -84,7 +93,6 @@
                 breadcrumb.innerHTML += `<li class="breadcrumb-item">Show</li>`;
             }
         }
-
         generateBreadcrumbs();
     </script>
 </div>
