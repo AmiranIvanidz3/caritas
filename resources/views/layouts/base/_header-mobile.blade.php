@@ -21,7 +21,7 @@
         <!--end::Header Menu Mobile Toggle-->
 
         <!--begin::Topbar Mobile Toggle-->
-        <button class="btn btn-hover-text-primary p-0 ml-2" id="kt_header_mobile_topbar_toggle">
+        <button class="user_mobile btn btn-hover-text-primary p-0 ml-2" onclick="document.getElementById('kt_quick_user').classList.toggle('offcanvas-on')">
                     <span class="svg-icon svg-icon-xl">
                         <!--begin::Svg Icon | path:assets/media/svg/icons/General/User.svg--><svg
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"

@@ -7,7 +7,7 @@
             User Profile
 {{--            <small class="text-muted font-size-sm ml-2">12 messages</small>--}}
         </h3>
-        <a href="#" class="btn btn-xs btn-icon btn-light btn-hover-primary" id="kt_quick_user_close">
+        <a href="#" class="btn btn-xs btn-icon btn-light btn-hover-primary" id="kt_quick_user_close" onclick="document.getElementById('kt_quick_user').classList.toggle('offcanvas-on')">
             <i class="ki ki-close icon-xs text-muted"></i>
         </a>
     </div>

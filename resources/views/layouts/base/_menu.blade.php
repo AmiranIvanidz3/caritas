@@ -13,7 +13,7 @@
            
                 <li id ="resources" class="menu-item @if(isset($menu['resources'])) menu-item-open menu-item-here @endif" menu-item-submenu aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
-                        <i class="menu-icon fa fa-layer-group"></i>
+                        <i class="menu-icon flaticon-user"></i>
                         <span class="menu-text">ცნობარები</span>
                         <i class="menu-arrow"></i>
                     </a>
@@ -99,7 +99,7 @@
                            
 
 
-                            <li id ="administration" class="menu-item @if(isset($menu['administration']['products'])) menu-item-open menu-item-here @endif" menu-item-submenu aria-haspopup="true" data-menu-toggle="hover">
+                            <li id ="x" class="menu-item @if(isset($menu['administration']['products'])) menu-item-open menu-item-here @endif" menu-item-submenu aria-haspopup="true" data-menu-toggle="hover">
                                 <a href="javascript:;" class="menu-link menu-toggle">
                                     <i class="menu-icon fa fa-layer-group"></i>
                                     <span class="menu-text">საქონელი</span>
@@ -135,7 +135,7 @@
 
                            
                             
-                            <li id ="administration" class="menu-item @if(isset($menu['administration']['procedures'])) menu-item-open menu-item-here @endif" menu-item-submenu aria-haspopup="true" data-menu-toggle="hover">
+                            <li id ="x" class="menu-item @if(isset($menu['administration']['procedures'])) menu-item-open menu-item-here @endif" menu-item-submenu aria-haspopup="true" data-menu-toggle="hover">
                                 <a href="javascript:;" class="menu-link menu-toggle">
                                     <i class="menu-icon fa fa-layer-group"></i>
                                     <span class="menu-text">პროცედურები</span>
@@ -169,7 +169,7 @@
                                 </div>
                             </li>
 
-                            <li id ="administration" class="menu-item @if(isset($menu['administration']['visits'])) menu-item-open menu-item-here @endif" menu-item-submenu aria-haspopup="true" data-menu-toggle="hover">
+                            <li id ="x" class="menu-item @if(isset($menu['administration']['visits'])) menu-item-open menu-item-here @endif" menu-item-submenu aria-haspopup="true" data-menu-toggle="hover">
                                 <a href="javascript:;" class="menu-link menu-toggle">
                                     <i class="menu-icon fa fa-layer-group"></i>
                                     <span class="menu-text">ვიზიტები</span>
@@ -431,7 +431,7 @@
     let menu_id = 0;
     $(".menu-toggle").click(function(element) {
         let parent = element.currentTarget.parentElement
-        if(menu_id != parent.id){
+        if(menu_id != parent.id && parent.id != 'x'){
             parent.classList.remove('menu-item-open')
             $("[menu-item-submenu]").removeClass("menu-item-open");
             menu_id = parent.id;

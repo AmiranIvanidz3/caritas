@@ -1,11 +1,18 @@
 {{-- Content --}}
-<div class="content  d-flex flex-column flex-column-fluid" id="kt_content">
+<style>
+    @media screen and (max-width:991px){
+        .subheader{
+            display:block !important;
+        }
+    }
+</style>
+<div  class="content  d-flex flex-column flex-column-fluid">
     <!--begin::Subheader-->
-    <div class="subheader py-2 py-lg-6  subheader-solid " id="kt_subheader">
+    <div class="subheader py-2 py-lg-6  subheader-solid" style="display:none;">
         <div
             class=" container-fluid  d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
             <!--begin::Info-->
-            <div class="d-flex align-items-center flex-wrap mr-1">
+            <div style="display:none" class="d-flex align-items-center flex-wrap mr-1">
 
                 <!--begin::Page Heading-->
                 <div class="d-flex align-items-baseline flex-wrap mr-5">
@@ -14,20 +21,20 @@
                     <!--end::Page Title-->
 
                     <!--begin::Breadcrumb-->
-                    <ul id="breadcrumb-desktop" class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
-                        <h5 class="text-dark font-weight-bold my-1 mr-5 page-title">
+                    <ul class="breadcrumb  breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+                        <h5 class="breadcrumb-desktop text-dark font-weight-bold my-1 mr-5 page-title">
                       
                         </h5>
-                        <li class="breadcrumb-item">
+                        <li class="breadcrumb-desktop breadcrumb-item">
                             <i class="menu-icon"></i>
                         </li>
 
-                        <li class="breadcrumb-item">
-                            <a class="text-muted" href=""></a>
+                        <li class="breadcrumb-desktop breadcrumb-item">
+                            <a class="breadcrumb-desktop text-muted" href=""></a>
                         </li>
 
-                        <li class="breadcrumb-item">
-                            <a class="submenu-text-muted text-muted" href=""></a>
+                        <li class="breadcrumb-desktop breadcrumb-item">
+                            <a class="breadcrumb-desktop submenu-text-muted text-muted" href=""></a>
                         </li>
 
                     </ul>
@@ -71,18 +78,32 @@
             const iconHTML = document.querySelector('.menu-item-here .menu-icon').outerHTML;
             const pageTitle = document.querySelector('.menu-item-here .menu-text').innerText;
             const linkName = document.querySelector('.menu-item-here .menu-item-here .menu-text').innerText;
-            const link = document.querySelector('.menu-item-here .menu-item-here .menu-link').href;
-            const submenuName = document.querySelector('.menu-item .menu-item-here .submenu')
+            const link = document.querySelector('.menu-item-here .menu-item-here .menu-link').href
+            const submenuName = document.querySelector('.menu-item.menu-item-here .submenu')
+
+            if(submenuName){
+                const submenuLink = document.querySelector(".menu-item.menu-item-here.submenu .menu-link").href
+                document.querySelector('.breadcrumb-desktop .submenu-text-muted').innerText = submenuName.innerText
+                document.querySelector('.breadcrumb-desktop .submenu-text-muted').href = submenuLink
+
+                document.querySelector('.breadcrumb-mobile .submenu-text-muted').innerText = submenuName.innerText
+                document.querySelector('.breadcrumb-mobile .submenu-text-muted').href = submenuLink
+                
+            }
+            
             
 
-            document.querySelector(".page-title").innerHTML = pageTitle;
-            document.querySelector(".breadcrumb-item .menu-icon").innerHTML = iconHTML;
-            document.querySelector(".breadcrumb-item .text-muted").innerText = linkName;
-            document.querySelector(".breadcrumb-item .text-muted").href = link;
-            if(submenuName){
-               
-                document.querySelector(".breadcrumb-item .submenu-text-muted").innerText = submenuName.innerText
-            }
+            document.querySelector(".breadcrumb-desktop.page-title").innerHTML = pageTitle;
+            document.querySelector(".breadcrumb-desktop.breadcrumb-item .menu-icon").innerHTML = iconHTML;
+            document.querySelector(".breadcrumb-desktop.breadcrumb-item .text-muted").innerText = linkName;
+            document.querySelector(".breadcrumb-desktop.breadcrumb-item .text-muted").href = link;
+
+            document.querySelector(".breadcrumb-mobile.page-title").innerHTML = pageTitle;
+            document.querySelector(".breadcrumb-mobile.breadcrumb-item .menu-icon").innerHTML = iconHTML;
+            document.querySelector(".breadcrumb-mobile.breadcrumb-item .text-muted").innerText = linkName;
+            document.querySelector(".breadcrumb-mobile.breadcrumb-item .text-muted").href = link;
+
+           
 
            
             if(currentURL.endsWith("/create")){
