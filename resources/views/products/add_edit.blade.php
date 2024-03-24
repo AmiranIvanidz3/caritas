@@ -38,48 +38,49 @@
                     @method('PUT')
                 @endif
                 <div class="card-body">
-
-                    <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" name="name" placeholder="Name" value="{{ $item_name }}"></input>
-                        @if($errors->has('name'))
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Name</label>
+                            <input type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" name="name" placeholder="Name" value="{{ $item_name }}"></input>
+                            @if($errors->has('name'))
+                                <div class="invalid-feedback">
+                                    <strong>{{ $errors->first('name') }}</strong>
+                                </div>
+                            @endif
+                        </div>
+    
+                        <div class="form-group col-md-6">
+                            <label for="kt_select2_1">Unit Type</label>
+                            <select class="form-control select2" id="kt_select2_1" name="unit_type_id" >
+                                <option value="0">Select Unit Type</option>
+                                @foreach($unit_types as $unit_type)
+                                    <option {{ $unit_type->id == $item_unit_type_id ? 'selected' : '' }} value="{{ $unit_type->id }}" >{{$unit_type->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        @if($errors->has('unit_type_id'))
                             <div class="invalid-feedback">
-                                <strong>{{ $errors->first('name') }}</strong>
+                                <strong>{{ $errors->first('unit_type_id') }}</strong>
                             </div>
                         @endif
-                    </div>
 
-                    <div class="form-group">
-                        <label for="kt_select2_1">Unit Type</label>
-                        <select class="form-control select2" id="kt_select2_1" name="unit_type_id" >
-                            <option value="0">Select Unit Type</option>
-                            @foreach($unit_types as $unit_type)
-                                <option {{ $unit_type->id == $item_unit_type_id ? 'selected' : '' }} value="{{ $unit_type->id }}" >{{$unit_type->name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    @if($errors->has('unit_type_id'))
-                        <div class="invalid-feedback">
-                            <strong>{{ $errors->first('unit_type_id') }}</strong>
+                        <div class="form-group col-md-6">
+                            <label for="kt_select2_1">Product Type</label>
+                            <select class="form-control select2" id="kt_select2_2" name="product_type_id" >
+                                <option value="0">Select Unit Type</option>
+                                @foreach($product_types as $product_type)
+                                    <option  {{ $product_type->id == $item_product_type_id ? 'selected' : '' }} value="{{$product_type->id}}">{{$product_type->name}}</option>
+                                @endforeach
+                            </select>
                         </div>
-                    @endif
+                        @if($errors->has('product_type_id'))
+                            <div class="invalid-feedback">
+                                <strong>{{ $errors->first('product_type_id') }}</strong>
+                            </div>
+                        @endif
 
-                    <div class="form-group">
-                        <label for="kt_select2_1">Product Type</label>
-                        <select class="form-control select2" id="kt_select2_2" name="product_type_id" >
-                            <option value="0">Select Unit Type</option>
-                            @foreach($product_types as $product_type)
-                                <option  {{ $product_type->id == $item_product_type_id ? 'selected' : '' }} value="{{$product_type->id}}">{{$product_type->name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    @if($errors->has('product_type_id'))
-                        <div class="invalid-feedback">
-                            <strong>{{ $errors->first('product_type_id') }}</strong>
-                        </div>
-                    @endif
-
-                    <div class="form-group">
+                        
+                    <div class="form-group col-md-6">
                         <label>Code</label>
                         <input type="text" class="form-control {{ $errors->has('code') ? 'is-invalid' : '' }}" name="code" placeholder="Code" value="{{ $item_code }}"></input>
                         @if($errors->has('code'))
@@ -89,7 +90,7 @@
                         @endif
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group col-md-6">
                         <label>Bar Code</label>
                         <input type="text" class="form-control {{ $errors->has('bar_code') ? 'is-invalid' : '' }}" name="bar_code" placeholder="Bar Code" value="{{ $item_bar_code }}"></input>
                         @if($errors->has('bar_code'))
@@ -99,8 +100,7 @@
                         @endif
                     </div>
 
-                    
-                    <div class="form-group">
+                    <div class="form-group col-md-6">
                         <label>Internal Code</label>
                         <input type="text" class="form-control {{ $errors->has('internal_code') ? 'is-invalid' : '' }}" name="internal_code" placeholder="Internal Code Code" value="{{ $item_internal_code }}"></input>
                         @if($errors->has('internal_code'))
@@ -109,6 +109,19 @@
                             </div>
                         @endif
                     </div>
+    
+
+                    </div>
+
+                   
+                    
+
+                 
+
+                  
+
+                    
+                  
 
                 
 

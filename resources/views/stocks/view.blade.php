@@ -30,17 +30,17 @@
                 <div class="filters">
                     <div class="row ">
                         <div style="display:flex; flex-wrap:wrap">
-                            <div class="col-2 mb-5 search_div">
+                            <div class="col-2  col-sm-3 col-lg-3 col-xl-2 mb-5 search_div">
                                 <label>From</label>
                                 <input id="from" type="date" class="form-control datatable-filter" @if(isset($_GET['created'])) value="{{substr($_GET['created'],0,10)}}" @endif value="{{ isset($_GET['from']) ? $_GET['from'] : "" }}" data-live-search="true" data-filter="from_date_filter" onchange="DataTableHelper.updateFilter(this, 'string')">
                             </div>
 
-                            <div class="col-2 mb-5 search_div">
+                            <div class="col-2  col-sm-3 col-lg-3 col-xl-2 mb-5 search_div">
                                 <label>To</label>
                                 <input id="to" type="date" class="form-control datatable-filter" @if(isset($_GET['created'])) value="{{substr($_GET['created'],0,10)}}" @endif value="{{ isset($_GET['to']) ? $_GET['to'] : "" }}" data-live-search="true" data-filter="to_date_filter" onchange="DataTableHelper.updateFilter(this, 'string')">
                             </div>
                             @foreach ($filters as $filterName => $filterLabel)
-                                <div class="col-2 mb-5 search_div">
+                                <div class="col-2  col-sm-3 col-lg-3 col-xl-2 mb-5 search_div">
                                     <label>{{ $filterLabel }}</label>
                                     <input type="text" id="{{$filterName}}" class="form-control datatable-filter {{ $filterName }} " @if(isset($_GET[$filterName])) value="{{$_GET[$filterName]}}" @endif data-live-search="true" data-filter="{{ $filterName }}" placeholder="{{ $filterLabel }}" onchange="DataTableHelper.updateFilter(this, 'string')">
                                 </div>

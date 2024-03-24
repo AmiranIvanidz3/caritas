@@ -20,7 +20,7 @@ class ProcedureTypeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public $title = 'procedure_types';
+    public $title = 'procedure-types';
     public $parent_menu = 'administration';
     public $submenu = 'procedures';
 
@@ -88,7 +88,7 @@ class ProcedureTypeController extends Controller
             throw new Exception($e->getMessage());
         }
 
-            return Redirect::route('procedure_types.index');
+            return Redirect::route('procedure-types.index');
     }
     /**
      * Display the specified resource.
@@ -134,7 +134,7 @@ class ProcedureTypeController extends Controller
         $item->procedure_group_id = $request->procedure_group_id;
         $item->save();
 
-        return Redirect::route('procedure_types.index');
+        return Redirect::route('procedure-types.index');
     }
 
     /**

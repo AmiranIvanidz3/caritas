@@ -11,7 +11,7 @@
                 @can('parameter:add')
                     <div class="card-toolbar">
                         <!--begin::Button-->
-                        <a href="{{ url(adminUrl('procedure_types/create')) }}" class="btn btn-primary font-weight-bolder">
+                        <a href="{{ url(adminUrl('procedure-groups/create')) }}" class="btn btn-primary font-weight-bolder">
                             <i class='flaticon-add'></i> {{\App\Models\Parameter::getValue('create_new')}}
                         </a>
                         <!--end::Button-->
@@ -33,7 +33,7 @@
 <script>
 
 
-    DataTableHelper.initDatatable('#datatable', [0, 'desc'], 'POST', '{{ adminUrl('procedure_types/list') }}', [
+    DataTableHelper.initDatatable('#datatable', [0, 'desc'], 'POST', '{{ adminUrl('procedure-groups/list') }}', [
             {
                 title: 'ID',
                 data: 'id',
@@ -55,8 +55,8 @@
                 }
             },
             {
-                title: 'Procedure Group',
-                data: 'procedure_group.name',
+                title: 'Comment',
+                data: 'comment',
                 render: function(data, type, row)
                 {
 
@@ -71,7 +71,7 @@
                 orderable: false,
                 render: function(data, type, row)
                 {
-                    let  html = '<a href="{{ adminUrl('procedure_types') }}/'+ data +'/edit" class="btn btn-sm btn-clean btn-icon" title="Edit"><i class="la la-edit"></i></a>';
+                    let  html = '<a href="{{ adminUrl('procedure-groups') }}/'+ data +'/edit" class="btn btn-sm btn-clean btn-icon" title="Edit"><i class="la la-edit"></i></a>';
                     return data ? html : "";
                 }
             },
@@ -82,7 +82,7 @@
                 orderable: false,
                 render: function(data, type, row)
                 {
-                    let  html = '<button onclick="DataTableHelper.deleteRecord(\'{{ adminUrl('procedure_types') }}/'+ data +'\')" class="btn btn-sm btn-clean btn-icon" title="Delete"><i class="la la-remove"></i></button>';
+                    let  html = '<button onclick="DataTableHelper.deleteRecord(\'{{ adminUrl('procedure-groups') }}/'+ data +'\')" class="btn btn-sm btn-clean btn-icon" title="Delete"><i class="la la-remove"></i></button>';
                     return data ? html : "";
                 }
             },

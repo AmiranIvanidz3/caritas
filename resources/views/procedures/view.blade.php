@@ -54,6 +54,17 @@
                     
                 }
             },
+            
+            {
+                title: 'Minute',
+                data: 'minute',
+                render: function(data, type, row)
+                {
+
+                    return data ? data : "";
+                    
+                }
+            },
             {
                 title: 'Procedure Type',
                 data: 'procedure_type.name',
@@ -65,8 +76,8 @@
                 }
             },
             {
-                title: 'Minute',
-                data: 'minute',
+                title: 'Procedure Group',
+                data: 'procedure_type.procedure_group.name',
                 render: function(data, type, row)
                 {
 

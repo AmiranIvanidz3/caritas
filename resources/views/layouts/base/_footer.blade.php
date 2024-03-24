@@ -6,9 +6,9 @@
         class=" container-fluid  d-flex flex-column flex-md-row align-items-center justify-content-between">
         <!--begin::Copyright-->
         <div class="text-dark order-2 order-md-1">
-            <span class="text-muted font-weight-bold mr-2">2021&copy;</span>
-            <a href="#" target="_blank"
-               class="text-dark-75 text-hover-primary">SDT</a>
+            <span class="text-muted font-weight-bold mr-2">2024&copy;</span>
+            <a href="https://caritas.ge/" target="_blank"
+               class="text-dark-75 text-hover-primary">Caritas</a>
         </div>
         <!--end::Copyright-->
 

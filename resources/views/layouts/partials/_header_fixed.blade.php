@@ -1,4 +1,4 @@
-{{-- header fixed --}}
+
 <div id="kt_header" class="header  header-fixed ">
     <!--begin::Container-->
     <div class=" container-fluid  d-flex align-items-stretch justify-content-between">
@@ -7,21 +7,19 @@
             <!--begin::Header Menu-->
             <div id="kt_header_menu"
                  class="header-menu header-menu-mobile  header-menu-layout-default ">
-                 <ul class="breadcrumb  breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
-                    <h5 class="breadcrumb-mobile text-dark font-weight-bold my-1 mr-5 page-title">
+                 <ul id="desktop" class="breadcrumb breadcrumb-desktop  breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+                    <h5 class="breadcrumb-desktop text-dark font-weight-bold my-1 mr-5 page-title">
                   
                     </h5>
-                    <li class="breadcrumb-mobile breadcrumb-item">
+                    <li class="breadcrumb-desktop breadcrumb-item">
                         <i class="menu-icon"></i>
                     </li>
 
-                    <li class="breadcrumb-mobile breadcrumb-item">
-                        <a class="breadcrumb-mobile text-muted" href=""></a>
+                    <li class="breadcrumb-desktop breadcrumb-item">
+                        <a class="breadcrumb-desktop text-muted" href=""></a>
                     </li>
 
-                    <li class="breadcrumb-mobile breadcrumb-item">
-                        <a class="breadcrumb-mobile submenu-text-muted text-muted" href=""></a>
-                    </li>
+                    
 
                 </ul>
                

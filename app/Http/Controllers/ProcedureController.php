@@ -45,7 +45,7 @@ class ProcedureController extends Controller
 
     public function procedureList(Request $request)
     {
-        $query = Procedure::with('procedureType')->get();
+        $query = Procedure::with('procedureType.procedureGroup')->get();
 
         return DataTables::of($query)->toJson();
     }

@@ -11,7 +11,7 @@
                 @can('parameter:add')
                     <div class="card-toolbar">
                         <!--begin::Button-->
-                        <a href="{{ url(adminUrl('products/create')) }}" class="btn btn-primary font-weight-bolder">
+                        <a href="{{ url(adminUrl('procedure-types/create')) }}" class="btn btn-primary font-weight-bolder">
                             <i class='flaticon-add'></i> {{\App\Models\Parameter::getValue('create_new')}}
                         </a>
                         <!--end::Button-->
@@ -33,7 +33,7 @@
 <script>
 
 
-    DataTableHelper.initDatatable('#datatable', [0, 'desc'], 'POST', '{{ adminUrl('products/list') }}', [
+    DataTableHelper.initDatatable('#datatable', [0, 'desc'], 'POST', '{{ adminUrl('procedure-types/list') }}', [
             {
                 title: 'ID',
                 data: 'id',
@@ -55,51 +55,10 @@
                 }
             },
             {
-                title: 'Code',
-                data: 'code',
+                title: 'Procedure Group',
+                data: 'procedure_group.name',
                 render: function(data, type, row)
                 {
-
-                    return data ? data : "";
-                    
-                }
-            },
-            {
-                title: 'Bar Code',
-                data: 'bar_code',
-                render: function(data, type, row)
-                {
-
-                    return data ? data : "";
-                    
-                }
-            },
-            {
-                title: 'Interval Code',
-                data: 'internal_code',
-                render: function(data, type, row)
-                {
-
-                    return data ? data : "";
-                    
-                }
-            },
-            {
-                title: 'Unit Type',
-                data: 'unit_type.name',
-                render: function(data, type, row)
-                {
-
-                    return data ? data : "";
-                    
-                }
-            },
-            {
-                title: 'Product Type',
-                data: 'product_type.name',
-                render: function(data, type, row)
-                {
-                    console.log(row)
 
                     return data ? data : "";
                     
@@ -112,7 +71,7 @@
                 orderable: false,
                 render: function(data, type, row)
                 {
-                    let  html = '<a href="{{ adminUrl('products') }}/'+ data +'/edit" class="btn btn-sm btn-clean btn-icon" title="Edit"><i class="la la-edit"></i></a>';
+                    let  html = '<a href="{{ adminUrl('procedure-types') }}/'+ data +'/edit" class="btn btn-sm btn-clean btn-icon" title="Edit"><i class="la la-edit"></i></a>';
                     return data ? html : "";
                 }
             },
@@ -123,7 +82,7 @@
                 orderable: false,
                 render: function(data, type, row)
                 {
-                    let  html = '<button onclick="DataTableHelper.deleteRecord(\'{{ adminUrl('products') }}/'+ data +'\')" class="btn btn-sm btn-clean btn-icon" title="Delete"><i class="la la-remove"></i></button>';
+                    let  html = '<button onclick="DataTableHelper.deleteRecord(\'{{ adminUrl('procedure-types') }}/'+ data +'\')" class="btn btn-sm btn-clean btn-icon" title="Delete"><i class="la la-remove"></i></button>';
                     return data ? html : "";
                 }
             },

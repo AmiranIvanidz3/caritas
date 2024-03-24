@@ -19,7 +19,7 @@ class ProcedureGroupController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public $title = 'procedure_groups';
+    public $title = 'procedure-groups';
     public $parent_menu = 'administration';
     public $submenu = 'procedures';
 
@@ -84,7 +84,7 @@ class ProcedureGroupController extends Controller
             throw new Exception($e->getMessage());
         }
 
-            return Redirect::route('procedure_groups.index');
+            return Redirect::route('procedure-groups.index');
     }
 
     /**
@@ -129,7 +129,7 @@ class ProcedureGroupController extends Controller
         $item->comment = $request->comment;
         $item->save();
 
-        return Redirect::route('procedure_groups.index');
+        return Redirect::route('procedure-groups.index');
     }
 
     /**
