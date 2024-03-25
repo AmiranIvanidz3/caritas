@@ -20,7 +20,7 @@ class ProcedureDoneController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public $title = 'procedures_done';
+    public $title = 'procedures-done';
     public $parent_menu = 'resources';
 
 
@@ -43,7 +43,7 @@ class ProcedureDoneController extends Controller
             ->with('page_title',ucwords(str_replace("-", " ", $this->parent_menu)));
     }
 
-    public function donorList(Request $request)
+    public function procedureDoneList (Request $request)
     {
         $query = ProcedureDone::get();
 
@@ -58,6 +58,7 @@ class ProcedureDoneController extends Controller
     public function create()
     {
         $procedures = Procedure::all();
+        // $visits = Visit::all();
         $menu[$this->parent_menu][$this->title] = true;
 
         return view(strtolower($this->title).'.add_edit')
@@ -79,7 +80,8 @@ class ProcedureDoneController extends Controller
         {
             $item = new ProcedureDone();
             $item->visid_id = $request->name;
-            $item->comment = $request->comment;
+            $item->procedure_id = $request->procedure_id;
+            $item->quantity = $request->quantity;
             $item->save();
         }
         catch(Exception $e)
@@ -87,7 +89,7 @@ class ProcedureDoneController extends Controller
             throw new Exception($e->getMessage());
         }
 
-            return Redirect::route('procedures_done.index');
+            return Redirect::route('procedures-done.index');
     }
 
     /**
@@ -130,12 +132,13 @@ class ProcedureDoneController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $item = ProcedureDone::find($id);
-        $item->name = $request->name;
-        $item->comment = $request->comment;
+        $item = new ProcedureDone();
+        $item->visid_id = $request->name;
+        $item->procedure_id = $request->procedure_id;
+        $item->quantity = $request->quantity;
         $item->save();
 
-        return Redirect::route('procedures_done.index');
+        return Redirect::route('procedures-done.index');
     }
 
     /**

@@ -11,7 +11,7 @@
                 @can('parameter:add')
                     <div class="card-toolbar">
                         <!--begin::Button-->
-                        <a href="{{ url(adminUrl('procedures_done/create')) }}" class="btn btn-primary font-weight-bolder">
+                        <a href="{{ url(adminUrl('procedures-done/create')) }}" class="btn btn-primary font-weight-bolder">
                             <i class='flaticon-add'></i> {{\App\Models\Parameter::getValue('create_new')}}
                         </a>
                         <!--end::Button-->
@@ -33,7 +33,7 @@
 <script>
 
 
-    DataTableHelper.initDatatable('#datatable', [0, 'desc'], 'POST', '{{ adminUrl('procedures_done/list') }}', [
+    DataTableHelper.initDatatable('#datatable', [0, 'desc'], 'POST', '{{ adminUrl('procedures-done/list') }}', [
             {
                 title: 'ID',
                 data: 'id',
@@ -45,13 +45,43 @@
                 }
             }, 
             {
+                title: 'Quantity',
+                data: 'quantity',
+                render: function(data, type, row)
+                {
+
+                    return data;
+                    
+                }
+            },
+            {
+                title: 'Procedure',
+                data: 'procedure.name',
+                render: function(data, type, row)
+                {
+
+                    return data ? data : "";
+                    
+                }
+            },
+            {
+                title: 'Visit',
+                data: 'visit.name',
+                render: function(data, type, row)
+                {
+
+                    return data ? data : "";
+                    
+                }
+            },
+            {
                 title: 'Edit',
                 data: 'id',
                 sWidth:'1px',
                 orderable: false,
                 render: function(data, type, row)
                 {
-                    let  html = '<a href="{{ adminUrl('procedures_done') }}/'+ data +'/edit" class="btn btn-sm btn-clean btn-icon" title="Edit"><i class="la la-edit"></i></a>';
+                    let  html = '<a href="{{ adminUrl('procedures-done') }}/'+ data +'/edit" class="btn btn-sm btn-clean btn-icon" title="Edit"><i class="la la-edit"></i></a>';
                     return data ? html : "";
                 }
             },
@@ -62,7 +92,7 @@
                 orderable: false,
                 render: function(data, type, row)
                 {
-                    let  html = '<button onclick="DataTableHelper.deleteRecord(\'{{ adminUrl('procedures_done') }}/'+ data +'\')" class="btn btn-sm btn-clean btn-icon" title="Delete"><i class="la la-remove"></i></button>';
+                    let  html = '<button onclick="DataTableHelper.deleteRecord(\'{{ adminUrl('procedures-done') }}/'+ data +'\')" class="btn btn-sm btn-clean btn-icon" title="Delete"><i class="la la-remove"></i></button>';
                     return data ? html : "";
                 }
             },

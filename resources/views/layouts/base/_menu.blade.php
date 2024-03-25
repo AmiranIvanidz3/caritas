@@ -71,8 +71,8 @@
                                 </a>
                             </li>
 
-                            <li class="menu-item @if(isset($menu['resources']['procedures_done'])) menu-item-here @endif" aria-haspopup="true">
-                                <a href="{{ adminUrl('procedures_done') }}" class="menu-link ">
+                            <li class="menu-item @if(isset($menu['resources']['procedures-done'])) menu-item-here @endif" aria-haspopup="true">
+                                <a href="{{ adminUrl('procedures-done') }}" class="menu-link ">
                                     <i class="menu-bullet menu-bullet-dot"><span></span></i>
                                     <span class="menu-text">Procedures Done</span>
                                 </a>

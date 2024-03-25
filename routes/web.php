@@ -209,8 +209,8 @@ Route::resource('procedures',   ProcedureController::class);
 Route::post('procedures/list', [ ProcedureController::class, 'procedureList']);
 
 
-Route::resource('procedures_done',   ProcedureDoneController::class);
-Route::post('procedures_done/list', [ ProcedureDoneController::class, 'procedureDoneList']);
+Route::resource('procedures-done',   ProcedureDoneController::class);
+Route::post('procedures-done/list', [ ProcedureDoneController::class, 'procedureDoneList']);
 
 /*
 |--------------------------------------------------------------------------
