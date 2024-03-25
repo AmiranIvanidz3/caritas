@@ -17,7 +17,7 @@ class ClientCityController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public $title = 'client_cities';
+    public $title = 'client-cities';
     public $parent_menu = 'resources';
 
 
@@ -83,7 +83,7 @@ class ClientCityController extends Controller
             throw new Exception($e->getMessage());
         }
 
-            return Redirect::route('client_cities.index');
+            return Redirect::route('client-cities.index');
     }
 
     /**
@@ -129,7 +129,7 @@ class ClientCityController extends Controller
         $item->comment = $request->comment;
         $item->save();
 
-        return Redirect::route('client_cities.index');
+        return Redirect::route('client-cities.index');
     }
 
     /**

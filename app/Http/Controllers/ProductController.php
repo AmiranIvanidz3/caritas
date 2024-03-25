@@ -1,9 +1,7 @@
 <?php
-
 namespace App\Http\Controllers;
 use Exception;
-use App\Models\ProductType;
-use App\Models\Parameter;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Helpers\ExceptionHelper;
 use App\Exceptions\ErrorException;
@@ -13,11 +11,15 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Yajra\DataTables\Facades\DataTables;
 
-class ProductTypeController extends Controller
+class ProductController extends Controller
 {
-    public $title = 'product-types';
-    public $parent_menu = 'administration';
-    public $submenu = 'products';
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public $title = 'products';
+    public $parent_menu = 'resources';
 
 
     
@@ -32,42 +34,19 @@ class ProductTypeController extends Controller
     {
        
 
-        $menu[$this->parent_menu][$this->submenu][$this->title] = true;
+        $menu[$this->parent_menu][$this->title] = true;
 
         return view(strtolower($this->title).'.view')
             ->with('menu', $menu) 
             ->with('page_title',ucwords(str_replace("-", " ", $this->parent_menu)));
     }
 
-    public function productTypeList(Request $request)
+    public function productList(request $request)
     {
-        $query = ProductType::query();
+        $query = Product::with('unitType', 'productType')->get();
 
-        $filters = [
-            'id',
-            'name',
-            'comment'
-        ];
-    
-        foreach ($filters as $value) {
-            if ($request->has($value) && $request->$value != null) { 
-                 $query->where($value, 'like', '%' . $request->$value . '%');
-            }
-        }
-
-        if($request->from_date_filter){
-            $date = Carbon::parse($request->from_date_filter)->format('Y-m-d');
-            $query->whereDate("created_at", ">=", $date);
-        }
-        
-        if($request->to_date_filter){
-            $date = Carbon::parse($request->to_date_filter)->format('Y-m-d');
-            $query->whereDate("created_at", "<=", $date);
-        }
-
-        return DataTables::of($query->get())->toJson();
+        return DataTables::of($query)->toJson();
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -76,14 +55,13 @@ class ProductTypeController extends Controller
      */
     public function create()
     {
-        //
-
-
-        $menu[$this->parent_menu][$this->submenu][$this->title] = true;
-
-        
+        $unit_types =  DB::select('SELECT * FROM unit_type');
+        $product_types = DB::select('SELECT * FROM product_type');
+        $menu[$this->parent_menu][$this->title] = true;
 
         return view(strtolower($this->title).'.add_edit')
+        ->with('product_types', $product_types)
+        ->with('unit_types', $unit_types)
         ->with('action', 'add')
         ->with('menu', $menu);
 
@@ -92,27 +70,30 @@ class ProductTypeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-    
-        
         try
         {
-            $ProductType = new ProductType();
-            $ProductType->name = $request->name;
-            $ProductType->comment = $request->comment;
-            $ProductType->save();
+            $item = new Product();
+            $item->name = $request->name;
+            $item->unit_type_id = $request->unit_type_id;
+            $item->product_type_id = $request->product_type_id;
+            $item->code = $request->code;
+            $item->bar_code = $request->bar_code;
+            $item->internal_code = $request->internal_code;
+            $item->save();
         }
         catch(Exception $e)
         {
             throw new Exception($e->getMessage());
         }
 
-            return Redirect::route('product-types.index');
+            return Redirect::route('products.index');
     }
+
     /**
      * Display the specified resource.
      *
@@ -132,12 +113,15 @@ class ProductTypeController extends Controller
      */
     public function edit($id)
     {
-           
-        $item = ProductType::find($id);
-        
+        $item = Product::find($id);
+        $unit_types =  DB::select('SELECT * FROM unit_type');
+        $product_types = DB::select('SELECT * FROM product_type');
 
-        $menu[$this->parent_menu][$this->submenu][$this->title] = true;
+        $menu[$this->parent_menu][$this->title] = true;
+
         return view(strtolower($this->title).'.add_edit')
+            ->with('product_types', $product_types)
+            ->with('unit_types', $unit_types)
             ->with('menu', $menu) 
             ->with('item', $item)
             ->with('action', 'edit');
@@ -146,18 +130,22 @@ class ProductTypeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(request $request, $id)
     {
-        $ProductType = ProductType::find($id);
-        $ProductType->name = $request->name;
-        $ProductType->comment = $request->comment;
-        $ProductType->save();
+        $item = Product::find($id);
+        $item->name = $request->name;
+        $item->unit_type_id = $request->unit_type_id;
+        $item->product_type_id = $request->product_type_id;
+        $item->code = $request->code;
+        $item->bar_code = $request->bar_code;
+        $item->internal_code = $request->internal_code;
+        $item->save();
 
-        return Redirect::route('product-types.index');
+        return Redirect::route('products.index');
     }
 
     /**
@@ -170,7 +158,7 @@ class ProductTypeController extends Controller
     {
         try
         {
-            $item = ProductType::find($id);
+            $item = Product::find($id);
 
             $item->delete();
             throw new SuccessException;

@@ -21,21 +21,19 @@
                     <!--end::Page Title-->
 
                     <!--begin::Breadcrumb-->
-                    <ul class="breadcrumb  breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
-                        <h5 class="breadcrumb-desktop text-dark font-weight-bold my-1 mr-5 page-title">
+                    <ul class="breadcrumb breadcrumb-mobile  breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+                        <h5 class="breadcrumb-mobile text-dark font-weight-bold my-1 mr-5 page-title">
                       
                         </h5>
-                        <li class="breadcrumb-desktop breadcrumb-item">
+                        <li class="breadcrumb-mobile breadcrumb-item">
                             <i class="menu-icon"></i>
                         </li>
 
-                        <li class="breadcrumb-desktop breadcrumb-item">
-                            <a class="breadcrumb-desktop text-muted" href=""></a>
+                        <li class="breadcrumb-mobile breadcrumb-item">
+                            <a class="breadcrumb-mobile text-muted" href=""></a>
                         </li>
 
-                        <li class="breadcrumb-desktop breadcrumb-item">
-                            <a class="breadcrumb-desktop submenu-text-muted text-muted" href=""></a>
-                        </li>
+                        
 
                     </ul>
                     <!--end::Breadcrumb-->
@@ -73,7 +71,8 @@
     <!--end::Entry-->
     <script>
         function generateBreadcrumbs() {
-            const breadcrumb =  document.querySelector(".breadcrumb");
+            const breadcrumbMobile =  document.querySelector(".breadcrumb-mobile");
+            const breadcrumbDesktop =  document.getElementById('desktop');
             const currentURL = window.location.href;    
             const iconHTML = document.querySelector('.menu-item-here .menu-icon').outerHTML;
             const pageTitle = document.querySelector('.menu-item-here .menu-text').innerText;
@@ -83,35 +82,50 @@
 
             if(submenuName){
                 const submenuLink = document.querySelector(".menu-item.menu-item-here.submenu .menu-link").href
+                breadcrumbMobile.innerHTML += `
+                <li class="breadcrumb-mobile breadcrumb-item">
+                            <a class="breadcrumb-mobile submenu-text-muted text-muted" href=""></a>
+                </li>
+                `
+
+                breadcrumbDesktop.innerHTML += `
+                <li class="breadcrumb-desktop breadcrumb-item">
+                            <a class="breadcrumb-desktop submenu-text-muted text-muted" href=""></a>
+                </li>
+                `
+                
+               
+                document.querySelector('.breadcrumb-mobile .submenu-text-muted').innerText = submenuName.innerText
+                document.querySelector('.breadcrumb-mobile .submenu-text-muted').href = submenuLink
+
                 document.querySelector('.breadcrumb-desktop .submenu-text-muted').innerText = submenuName.innerText
                 document.querySelector('.breadcrumb-desktop .submenu-text-muted').href = submenuLink
 
-                document.querySelector('.breadcrumb-mobile .submenu-text-muted').innerText = submenuName.innerText
-                document.querySelector('.breadcrumb-mobile .submenu-text-muted').href = submenuLink
+                
                 
             }
             
             
-
-            document.querySelector(".breadcrumb-desktop.page-title").innerHTML = pageTitle;
-            document.querySelector(".breadcrumb-desktop.breadcrumb-item .menu-icon").innerHTML = iconHTML;
-            document.querySelector(".breadcrumb-desktop.breadcrumb-item .text-muted").innerText = linkName;
-            document.querySelector(".breadcrumb-desktop.breadcrumb-item .text-muted").href = link;
 
             document.querySelector(".breadcrumb-mobile.page-title").innerHTML = pageTitle;
             document.querySelector(".breadcrumb-mobile.breadcrumb-item .menu-icon").innerHTML = iconHTML;
             document.querySelector(".breadcrumb-mobile.breadcrumb-item .text-muted").innerText = linkName;
             document.querySelector(".breadcrumb-mobile.breadcrumb-item .text-muted").href = link;
 
+            document.querySelector(".breadcrumb-desktop.page-title").innerHTML = pageTitle;
+            document.querySelector(".breadcrumb-desktop.breadcrumb-item .menu-icon").innerHTML = iconHTML;
+            document.querySelector(".breadcrumb-desktop.breadcrumb-item .text-muted").innerText = linkName;
+            document.querySelector(".breadcrumb-desktop.breadcrumb-item .text-muted").href = link;
+
            
 
            
             if(currentURL.endsWith("/create")){
-                breadcrumb.innerHTML += `<li class="breadcrumb-item">{{ env('create_new') }}</li>`;
+                breadcrumbMobile.innerHTML += `<li class="breadcrumb-item">{{ env('create_new') }}</li>`;
             }else if (currentURL.endsWith("/edit")){
-                breadcrumb.innerHTML += `<li class="breadcrumb-item">Edit</li>`;
+                breadcrumbMobile.innerHTML += `<li class="breadcrumb-item">Edit</li>`;
             }else if (currentURL.endsWith("/show")){
-                breadcrumb.innerHTML += `<li class="breadcrumb-item">Show</li>`;
+                breadcrumbMobile.innerHTML += `<li class="breadcrumb-item">Show</li>`;
             }
         }
         generateBreadcrumbs();

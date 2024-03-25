@@ -7,14 +7,14 @@
             $title =  env('CREATE_NEW');
             $item_name = old('name');
             $item_procedure_group_id = old('procedure_group_id');
-            $form_action = '/'.env('ADMIN_URL').'/procedure_types';
+            $form_action = '/'.env('ADMIN_URL').'/procedure-types';
             ?>
         @else
             <?php 
             $title = 'Edit';
             $item_name = $item->name;
             $item_procedure_group_id = $item->procedure_group_id;
-            $form_action = '/'.env('ADMIN_URL').'/procedure_types/'.$item->id;
+            $form_action = '/'.env('ADMIN_URL').'/procedure-types/'.$item->id;
             ?>
         @endif
         <div class="card card-custom">

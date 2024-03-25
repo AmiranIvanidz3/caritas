@@ -40,6 +40,7 @@ use App\Http\Controllers\VisitPlaceController;
 use App\Http\Controllers\VisitStateController;
 use App\Http\Controllers\NewsRequestController;
 use App\Http\Controllers\ProductTypeController;
+use App\Http\Controllers\ProcedureDoneController;
 use App\Http\Controllers\ProcedureTypeController;
 use App\Http\Controllers\ProcedureGroupController;
 use App\Http\Controllers\ExcludedUserAgentController;
@@ -194,18 +195,22 @@ Route::post('products/list', [ ProductController::class, 'productList']);
 Route::resource('donors',   DonorController::class);
 Route::post('donors/list', [ DonorController::class, 'donorList']);
 
-Route::resource('client_cities',   ClientCityController::class);
-Route::post('client_cities/list', [ ClientCityController::class, 'clientCityList']);
+Route::resource('client-cities',   ClientCityController::class);
+Route::post('client-cities/list', [ ClientCityController::class, 'clientCityList']);
 
-Route::resource('procedure_groups',   ProcedureGroupController::class);
-Route::post('procedure_groups/list', [ ProcedureGroupController::class, 'procedureGroupList']);
+Route::resource('procedure-groups',   ProcedureGroupController::class);
+Route::post('procedure-groups/list', [ ProcedureGroupController::class, 'procedureGroupList']);
 
 
-Route::resource('procedure_types',   ProcedureTypeController::class);
-Route::post('procedure_types/list', [ ProcedureTypeController::class, 'procedureTypeList']);
+Route::resource('procedure-types',   ProcedureTypeController::class);
+Route::post('procedure-types/list', [ ProcedureTypeController::class, 'procedureTypeList']);
 
 Route::resource('procedures',   ProcedureController::class);
 Route::post('procedures/list', [ ProcedureController::class, 'procedureList']);
+
+
+Route::resource('procedures_done',   ProcedureDoneController::class);
+Route::post('procedures_done/list', [ ProcedureDoneController::class, 'procedureDoneList']);
 
 /*
 |--------------------------------------------------------------------------

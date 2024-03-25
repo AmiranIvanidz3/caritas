@@ -7,14 +7,14 @@
             $title =  env('CREATE_NEW');
             $item_name = old('name');
             $item_comment = old('comment');
-            $form_action = '/'.env('ADMIN_URL').'/procedure_groups';
+            $form_action = '/'.env('ADMIN_URL').'/client-cities';
             ?>
         @else
             <?php 
             $title = 'Edit';
             $item_name = $item->name;
             $item_comment= $item->comment;
-            $form_action = '/'.env('ADMIN_URL').'/procedure_groups/'.$item->id;
+            $form_action = '/'.env('ADMIN_URL').'/client-cities/'.$item->id;
             ?>
         @endif
         <div class="card card-custom">

@@ -13,7 +13,7 @@
            
                 <li id ="resources" class="menu-item @if(isset($menu['resources'])) menu-item-open menu-item-here @endif" menu-item-submenu aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
-                        <i class="menu-icon flaticon-user"></i>
+                        <i class="menu-icon flaticon-map"></i>
                         <span class="menu-text">ცნობარები</span>
                         <i class="menu-arrow"></i>
                     </a>
@@ -41,8 +41,8 @@
                             </li>
     
                                                     
-                            <li class="menu-item @if(isset($menu['resources']['client_cities'])) menu-item-here @endif" aria-haspopup="true">
-                                <a href="{{ adminUrl('client_cities') }}" class="menu-link ">
+                            <li class="menu-item @if(isset($menu['resources']['client-cities'])) menu-item-here @endif" aria-haspopup="true">
+                                <a href="{{ adminUrl('client-cities') }}" class="menu-link ">
                                     <i class="menu-bullet menu-bullet-dot"><span></span></i>
                                     <span class="menu-text">ქალაქები</span>
                                 </a>
@@ -64,13 +64,6 @@
                                 </a>
                             </li>
 
-                            <li class="menu-item @if(isset($menu['resources']['products'])) menu-item-here @endif" aria-haspopup="true">
-                                <a href="{{ adminUrl('stocks') }}" class="menu-link ">
-                                    <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                                    <span class="menu-text">საქონელი</span>
-                                </a>
-                            </li>
-
                             <li class="menu-item @if(isset($menu['resources']['stocks'])) menu-item-here @endif" aria-haspopup="true">
                                 <a href="{{ adminUrl('stocks') }}" class="menu-link ">
                                     <i class="menu-bullet menu-bullet-dot"><span></span></i>
@@ -78,13 +71,21 @@
                                 </a>
                             </li>
 
+                            <li class="menu-item @if(isset($menu['resources']['procedures_done'])) menu-item-here @endif" aria-haspopup="true">
+                                <a href="{{ adminUrl('procedures_done') }}" class="menu-link ">
+                                    <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                    <span class="menu-text">Procedures Done</span>
+                                </a>
+                            </li>
+
+
                         </ul>
                     </div>
                 </li>
 
                 <li id ="administration" class="menu-item @if(isset($menu['administration'])) menu-item-open menu-item-here @endif" menu-item-submenu aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
-                        <i class="menu-icon fa fa-layer-group"></i>
+                        <i class="menu-icon flaticon-cogwheel"></i>
                         <span class="menu-text">ადმინისტრირება</span>
                         <i class="menu-arrow"></i>
                     </a>
@@ -101,7 +102,7 @@
 
                             <li id ="x" class="menu-item @if(isset($menu['administration']['products'])) menu-item-open menu-item-here @endif" menu-item-submenu aria-haspopup="true" data-menu-toggle="hover">
                                 <a href="javascript:;" class="menu-link menu-toggle">
-                                    <i class="menu-icon fa fa-layer-group"></i>
+                                    <i class="menu-icon flaticon-grid-menu-v2"></i>
                                     <span class="menu-text">საქონელი</span>
                                     <i class="menu-arrow"></i>
                                 </a>
@@ -150,16 +151,16 @@
                                                                 </span>
                                         </li>
 
-                                        <li class="menu-item @if(isset($menu['administration']['procedures']['procedure_groups'])) menu-item-here submenu @endif" aria-haspopup="true">
-                                            <a href="{{ adminUrl('procedure_groups') }}" class="menu-link ">
+                                        <li class="menu-item @if(isset($menu['administration']['procedures']['procedure-groups'])) menu-item-here submenu @endif" aria-haspopup="true">
+                                            <a href="{{ adminUrl('procedure-groups') }}" class="menu-link ">
                                                 <i class="menu-bullet menu-bullet-dot"><span></span></i>
                                                 <span class="menu-text">პროცედურების ჯგუფები</span>
                                             </a>
                                         </li>
                 
                                         
-                                        <li class="menu-item @if(isset($menu['administration']['procedures']['procedure_types'])) menu-item-here submenu @endif" aria-haspopup="true">
-                                            <a href="{{ adminUrl('procedure_types') }}" class="menu-link ">
+                                        <li class="menu-item @if(isset($menu['administration']['procedures']['procedure-types'])) menu-item-here submenu @endif" aria-haspopup="true">
+                                            <a href="{{ adminUrl('procedure-types') }}" class="menu-link ">
                                                 <i class="menu-bullet menu-bullet-dot"><span></span></i>
                                                 <span class="menu-text">პროცედურების ტიპები</span>
                                             </a>
