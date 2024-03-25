@@ -2,7 +2,7 @@
 <div class="brand flex-column-auto " id="kt_brand mt-5" style="margin-top: 20px;">
     <!--begin::Logo-->
     <a href="{{ adminUrl('/') }}" class="brand-logo">
-        <h2>Reels</h2>
+        <h2>{{\App\Models\Parameter::getValue('project_name')}}</h2>
     </a>
     <!--end::Logo-->
 

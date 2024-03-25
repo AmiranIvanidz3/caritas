@@ -2,7 +2,7 @@
 <div id="kt_header_mobile" class="header-mobile align-items-center  header-mobile-fixed ">
     <!--begin::Logo-->
     <a href="{{ adminUrl('/') }}">
-        <h2>Reels</h2>
+        <h2>{{\App\Models\Parameter::getValue('project_name')}}</h2>
     </a>
     <!--end::Logo-->
 
