@@ -14,6 +14,7 @@ use App\Http\Controllers\StockController;
 use App\Http\Controllers\TopicController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ChannelController;
 use App\Http\Controllers\CommentController;
@@ -221,6 +222,9 @@ Route::post('client-financial-statuses/list', [ ClientFinancialStatusController:
 
 Route::resource('client-districts',   ClientDistrictController::class);
 Route::post('client-districts/list', [ ClientDistrictController::class, 'clientDistrictList']);
+
+Route::resource('clients', ClientController::class);
+Route::post('clients/list', [ ClientController::class, 'clientList']);
 
 Route::resource('procedure-groups',   ProcedureGroupController::class);
 Route::post('procedure-groups/list', [ ProcedureGroupController::class, 'procedureGroupList']);
