@@ -40,6 +40,7 @@ use App\Http\Controllers\VisitPlaceController;
 use App\Http\Controllers\VisitStateController;
 use App\Http\Controllers\NewsRequestController;
 use App\Http\Controllers\ProductTypeController;
+use App\Http\Controllers\ClientInvalidController;
 use App\Http\Controllers\ProcedureDoneController;
 use App\Http\Controllers\ProcedureTypeController;
 use App\Http\Controllers\ProcedureGroupController;
@@ -197,6 +198,9 @@ Route::post('donors/list', [ DonorController::class, 'donorList']);
 
 Route::resource('client-cities',   ClientCityController::class);
 Route::post('client-cities/list', [ ClientCityController::class, 'clientCityList']);
+
+Route::resource('client-invalid',   ClientInvalidController::class);
+Route::post('client-invalid/list', [ ClientInvalidController::class, 'clientInvalidList']);
 
 Route::resource('procedure-groups',   ProcedureGroupController::class);
 Route::post('procedure-groups/list', [ ProcedureGroupController::class, 'procedureGroupList']);
