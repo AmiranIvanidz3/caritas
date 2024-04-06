@@ -40,6 +40,7 @@ use App\Http\Controllers\VisitPlaceController;
 use App\Http\Controllers\VisitStateController;
 use App\Http\Controllers\NewsRequestController;
 use App\Http\Controllers\ProductTypeController;
+use App\Http\Controllers\ClientGenderController;
 use App\Http\Controllers\ClientInvalidController;
 use App\Http\Controllers\ProcedureDoneController;
 use App\Http\Controllers\ProcedureTypeController;
@@ -207,6 +208,9 @@ Route::post('client-invalid/list', [ ClientInvalidController::class, 'clientInva
 
 Route::resource('client-conclusions',   ClientConclusionController::class);
 Route::post('client-conclusions/list', [ ClientConclusionController::class, 'clientConclusionList']);
+
+Route::resource('client-genders',   ClientGenderController::class);
+Route::post('client-genders/list', [ ClientGenderController::class, 'clientGenderList']);
 
 Route::resource('client-current-statuses',   ClientCurrentStatusController::class);
 Route::post('client-current-statuses/list', [ ClientCurrentStatusController::class, 'clientCurrentStatusList']);
