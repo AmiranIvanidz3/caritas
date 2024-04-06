@@ -11,4 +11,10 @@ class Client extends Model
 
     public $timestamps = false;
     protected $table= "client";
+
+
+    public function type()
+    {
+        return $this->belongsTo(ClientType::class, 'client_type_id');
+    }
 }

@@ -52,9 +52,9 @@ class AppServiceProvider extends ServiceProvider
 
 
         // Admin URL from DB Logic Section --START--
-        $adminUrl = Parameter::getValue('admin_dir');
+        // $adminUrl = Parameter::getValue('admin_dir');
         
-        putenv("ADMIN_URL={$adminUrl}"); 
+        // putenv("ADMIN_URL={$adminUrl}"); 
         // Admin URL from DB Logic Section --END--
 
     }

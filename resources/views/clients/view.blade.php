@@ -19,6 +19,9 @@
                 @endcan
             </div>
             <div class="card-body">
+                <div class="row">
+                    
+                </div>
                <!--begin: Datatable-->
                <table class="table table-bordered table-hover table-checkable" id="datatable"></table>
                 <!--end: Datatable-->
@@ -40,7 +43,7 @@
                 render: function(data, type, row)
                 {
 
-                    return data;
+                    return data ? data : "";
                     
                 }
             }, 
@@ -50,7 +53,208 @@
                 render: function(data, type, row)
                 {
 
-                    return data;
+                    return data ? data : "";
+                    
+                }
+            },
+            {
+                title: 'Type',
+                data: 'client_type',
+                render: function(data, type, row)
+                {
+                    console.log(row)
+
+                    return data ? data : "";
+                    
+                }
+            },
+            {
+                title: 'City',
+                data: 'client_city',
+                render: function(data, type, row)
+                {
+
+                    return data ? data : "";
+                    
+                }
+            },
+            {
+                title: 'District',
+                data: 'client_district',
+                render: function(data, type, row)
+                {
+
+                    return data ? data : "";
+                    
+                }
+            },
+            {
+                title: 'Gender',
+                data: 'client_gender',
+                render: function(data, type, row)
+                {
+
+                    return data ? data : "";
+                    
+                }
+            },
+            {
+                title: 'Invalid',
+                data: 'client_invalid',
+                render: function(data, type, row)
+                {
+
+                    return data ? data : "";
+                    
+                }
+            },
+            {
+                title: 'Conclusion',
+                data: 'client_conclusion',
+                render: function(data, type, row)
+                {
+
+                    return data ? data : "";
+                    
+                }
+            },
+            {
+                title: 'Financial Status',
+                data: 'client_financial_status',
+                render: function(data, type, row)
+                {
+
+                    return data ? data : "";
+                    
+                }
+            },
+            {
+                title: 'Current Status',
+                data: 'client_current_status',
+                render: function(data, type, row)
+                {
+
+                    return data ? data : "";
+                    
+                }
+            },
+            {
+                title: 'Donor',
+                data: 'donor',
+                render: function(data, type, row)
+                {
+
+                    return data ? data : "";
+                    
+                }
+            },
+            {
+                title: 'Date Birth',
+                data: 'date_birth',
+                render: function(data, type, row)
+                {
+
+                    return data ? data : "";
+                    
+                }
+            },
+            {
+                title: 'Date Take',
+                data: 'date_take',
+                render: function(data, type, row)
+                {
+
+                    return data ? data : "";
+                    
+                }
+            },
+            {
+                title: 'Date Stop',
+                data: 'date_stop',
+                render: function(data, type, row)
+                {
+
+                    return data ? data : "";
+                    
+                }
+            },
+            {
+                title: 'Stop Reason',
+                data: 'stop_reason',
+                render: function(data, type, row)
+                {
+
+                    return data ? data : "";
+                    
+                }
+            },
+            {
+                title: 'Social Score',
+                data: 'social_score',
+                render: function(data, type, row)
+                {
+
+                    return data ? data : "";
+                    
+                }
+            },
+            {
+                title: 'Personal ID',
+                data: 'personal_id',
+                render: function(data, type, row)
+                {
+
+                    return data ? data : "";
+                    
+                }
+            },
+            {
+                title: 'Physical Address',
+                data: 'physical_address',
+                render: function(data, type, row)
+                {
+
+                    return data ? data : "";
+                    
+                }
+            },
+            {
+                title: 'Contact Person',
+                data: 'contact_person',
+                render: function(data, type, row)
+                {
+
+                    return data ? data : "";
+                    
+                }
+            },
+            {
+                title: 'Phone',
+                data: 'phone',
+                render: function(data, type, row)
+                {
+
+                    return data ? data : "";
+                    
+                }
+            },
+            {
+                title: 'Diagnosis',
+                data: 'diagnosis',
+                render: function(data, type, row)
+                {
+
+                    return data ? data : "";
+                    
+                }
+            },
+            {
+                title: 'Comment',
+                data: 'comment',
+                render: function(data, type, row)
+                {
+
+                    return data ? data : "";
                     
                 }
             },

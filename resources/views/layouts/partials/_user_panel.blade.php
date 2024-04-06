@@ -239,3 +239,36 @@
     </div>
     <!--end::Content-->
 </div>
+
+
+
+
+
+
+
+{{-- $item_xxx = old('xxx') --}}
+{{-- <div class="form-group">
+    <label>xxx</label>
+    <input type="text" class="form-control {{ $errors->has('xxx') ? 'is-invalid' : '' }}" name="xxx" placeholder="xxx" value="{{ $item_xxx }}"></input>
+    @if($errors->has('xxx'))
+        <div class="invalid-feedback">
+            <strong>{{ $errors->first('xxx') }}</strong>
+        </div>
+    @endif
+</div>
+
+<div class="form-group">
+    <label for="kt_select2_1">yyy</label>
+    <select class="form-control select2" id="kt_select2_1" name="yyy" >
+        <option value="0">Select yyy</option>
+        @foreach($unit_types as $unit_type)
+            <option {{ $unit_type->id == $item_unit_type_id ? 'selected' : '' }} value="{{ $unit_type->id }}" >{{$unit_type->name}}</option>
+        @endforeach
+    </select>
+</div>
+@if($errors->has('yyy'))
+    <div class="invalid-feedback">
+        <strong>{{ $errors->first('yyy') }}</strong>
+    </div>
+@endif --}}
+
