@@ -45,6 +45,7 @@ use App\Http\Controllers\ProcedureDoneController;
 use App\Http\Controllers\ProcedureTypeController;
 use App\Http\Controllers\ClientDistrictController;
 use App\Http\Controllers\ProcedureGroupController;
+use App\Http\Controllers\ClientConclusionController;
 use App\Http\Controllers\ExcludedUserAgentController;
 use App\Http\Controllers\External\ExternalController;
 
@@ -202,6 +203,9 @@ Route::post('client-cities/list', [ ClientCityController::class, 'clientCityList
 
 Route::resource('client-invalid',   ClientInvalidController::class);
 Route::post('client-invalid/list', [ ClientInvalidController::class, 'clientInvalidList']);
+
+Route::resource('client-conclusions',   ClientConclusionController::class);
+Route::post('client-conclusions/list', [ ClientConclusionController::class, 'clientConclusionList']);
 
 Route::resource('client-districts',   ClientDistrictController::class);
 Route::post('client-districts/list', [ ClientDistrictController::class, 'clientDistrictList']);
