@@ -50,6 +50,7 @@ use App\Http\Controllers\ClientConclusionController;
 use App\Http\Controllers\ExcludedUserAgentController;
 use App\Http\Controllers\External\ExternalController;
 use App\Http\Controllers\ClientCurrentStatusController;
+use App\Http\Controllers\ClientFinancialStatusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -214,6 +215,9 @@ Route::post('client-genders/list', [ ClientGenderController::class, 'clientGende
 
 Route::resource('client-current-statuses',   ClientCurrentStatusController::class);
 Route::post('client-current-statuses/list', [ ClientCurrentStatusController::class, 'clientCurrentStatusList']);
+
+Route::resource('client-financial-statuses',   ClientFinancialStatusController::class);
+Route::post('client-financial-statuses/list', [ ClientFinancialStatusController::class, 'clientFinancialStatusList']);
 
 Route::resource('client-districts',   ClientDistrictController::class);
 Route::post('client-districts/list', [ ClientDistrictController::class, 'clientDistrictList']);

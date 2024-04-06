@@ -76,6 +76,13 @@
                                 </a>
                             </li>
 
+                            <li class="menu-item @if(isset($menu['resources']['client-financial-statuses'])) menu-item-here @endif" aria-haspopup="true">
+                                <a href="{{ adminUrl('client-financial-statuses') }}" class="menu-link ">
+                                    <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                    <span class="menu-text">ფინანსური  სტატუსი</span>
+                                </a>
+                            </li>
+
                             <li class="menu-item @if(isset($menu['resources']['client-genders'])) menu-item-here @endif" aria-haspopup="true">
                                 <a href="{{ adminUrl('client-genders') }}" class="menu-link ">
                                     <i class="menu-bullet menu-bullet-dot"><span></span></i>
