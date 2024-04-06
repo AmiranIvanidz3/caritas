@@ -48,6 +48,7 @@ use App\Http\Controllers\ProcedureGroupController;
 use App\Http\Controllers\ClientConclusionController;
 use App\Http\Controllers\ExcludedUserAgentController;
 use App\Http\Controllers\External\ExternalController;
+use App\Http\Controllers\ClientCurrentStatusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -206,6 +207,9 @@ Route::post('client-invalid/list', [ ClientInvalidController::class, 'clientInva
 
 Route::resource('client-conclusions',   ClientConclusionController::class);
 Route::post('client-conclusions/list', [ ClientConclusionController::class, 'clientConclusionList']);
+
+Route::resource('client-current-statuses',   ClientCurrentStatusController::class);
+Route::post('client-current-statuses/list', [ ClientCurrentStatusController::class, 'clientCurrentStatusList']);
 
 Route::resource('client-districts',   ClientDistrictController::class);
 Route::post('client-districts/list', [ ClientDistrictController::class, 'clientDistrictList']);
